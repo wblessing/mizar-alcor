@@ -1,8 +1,4 @@
-import React, {
-  useContext,
-  useEffect,
-  useState
-} from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import PageTitle from '../components/common/PageTitle';
 import { FetchContext } from '../context/FetchContext';
 import DangerButton from './../components/common/DangerButton';
@@ -12,28 +8,18 @@ import InventoryItemForm from './../components/InventoryItemForm';
 import { formatCurrency } from './../util';
 
 const InventoryItemContainer = ({ children }) => (
-  <div className="bg-white rounded shadow-md mb-4 p-4">
-    {children}
-  </div>
+  <div className="bg-white rounded shadow-md mb-4 p-4">{children}</div>
 );
 
 const InventoryItem = ({ item, onDelete }) => {
   return (
     <div className="flex">
-      <img
-        className="rounded w-32 h-full"
-        src={item.image}
-        alt="inventory"
-      />
+      <img className="rounded w-32 h-full" src={item.image} alt="inventory" />
       <div className="flex justify-between w-full">
         <div className="flex flex-col ml-4 justify-between">
           <div>
-            <p className="font-bold text-xl text-gray-900">
-              {item.name}
-            </p>
-            <p className="text-sm text-gray-600">
-              {item.itemNumber}
-            </p>
+            <p className="font-bold text-xl text-gray-900">{item.name}</p>
+            <p className="text-sm text-gray-600">{item.itemNumber}</p>
           </div>
           <div>
             <p className="text-gray-700 text-xl">
@@ -42,10 +28,7 @@ const InventoryItem = ({ item, onDelete }) => {
           </div>
         </div>
         <div className="self-end">
-          <DangerButton
-            text="Delete"
-            onClick={() => onDelete(item)}
-          />
+          <DangerButton text="Delete" onClick={() => onDelete(item)} />
         </div>
       </div>
     </div>
@@ -71,7 +54,7 @@ const Inventory = () => {
     const getInventory = async () => {
       try {
         const { data } = await fetchContext.authAxios.get(
-          'inventory'
+          'get-inventory-items'
         );
         setInventory(data);
       } catch (err) {
@@ -85,7 +68,7 @@ const Inventory = () => {
   const onSubmit = async (values, resetForm) => {
     try {
       const { data } = await fetchContext.authAxios.post(
-        'inventory',
+        'post-inventory-item',
         values
       );
       setInventory([...inventory, data.inventoryItem]);
@@ -99,22 +82,14 @@ const Inventory = () => {
     }
   };
 
-  const onDelete = async item => {
+  const onDelete = async (item) => {
     try {
-      if (
-        window.confirm(
-          'Are you sure you want to delete this item?'
-        )
-      ) {
-        const {
-          data
-        } = await fetchContext.authAxios.delete(
-          `inventory/${item._id}`
+      if (window.confirm('Are you sure you want to delete this item?')) {
+        const { data } = await fetchContext.authAxios.delete(
+          `delete-inventory-item/${item._id}`
         );
         setInventory(
-          inventory.filter(
-            item => item._id !== data.deletedItem._id
-          )
+          inventory.filter((item) => item._id !== data.deletedItem._id)
         );
       }
     } catch (err) {
@@ -126,20 +101,15 @@ const Inventory = () => {
   return (
     <>
       <PageTitle title="Inventory" />
-      {successMessage && (
-        <FormSuccess text={successMessage} />
-      )}
+      {successMessage && <FormSuccess text={successMessage} />}
       {errorMessage && <FormError text={errorMessage} />}
       <div className="mb-4">
         <NewInventoryItem onSubmit={onSubmit} />
       </div>
       {inventory && inventory.length
-        ? inventory.map(item => (
+        ? inventory.map((item) => (
             <InventoryItemContainer key={item._id}>
-              <InventoryItem
-                item={item}
-                onDelete={onDelete}
-              />
+              <InventoryItem item={item} onDelete={onDelete} />
             </InventoryItemContainer>
           ))
         : 'No Inventory Items'}

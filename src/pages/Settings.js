@@ -1,8 +1,4 @@
-import React, {
-  useContext,
-  useEffect,
-  useState
-} from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Field, Form, Formik } from 'formik';
 import GradientButton from '../components/common/GradientButton';
 import PageTitle from '../components/common/PageTitle';
@@ -20,9 +16,7 @@ const Settings = () => {
   useEffect(() => {
     const getBio = async () => {
       try {
-        const { data } = await fetchContext.authAxios.get(
-          'bio'
-        );
+        const { data } = await fetchContext.authAxios.get('get-user-bio');
         setBio(data.bio);
       } catch (err) {
         console.log(err);
@@ -31,10 +25,10 @@ const Settings = () => {
     getBio();
   }, [fetchContext.authAxios]);
 
-  const saveBio = async bio => {
+  const saveBio = async (bio) => {
     try {
       const { data } = await fetchContext.authAxios.patch(
-        'bio',
+        'update-user-bio',
         bio
       );
       setErrorMessage(null);
@@ -49,18 +43,14 @@ const Settings = () => {
     <>
       <PageTitle title="Settings" />
       <Card>
-        <h2 className="font-bold mb-2">
-          Fill Out Your Bio
-        </h2>
-        {successMessage && (
-          <FormSuccess text={successMessage} />
-        )}
+        <h2 className="font-bold mb-2">Fill Out Your Bio</h2>
+        {successMessage && <FormSuccess text={successMessage} />}
         {errorMessage && <FormError text={errorMessage} />}
         <Formik
           initialValues={{
-            bio
+            bio,
           }}
-          onSubmit={values => saveBio(values)}
+          onSubmit={(values) => saveBio(values)}
           enableReinitialize={true}
         >
           {() => (
