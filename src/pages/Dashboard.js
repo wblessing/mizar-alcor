@@ -1,12 +1,8 @@
-import React, {
-  useContext,
-  useEffect,
-  useState
-} from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import {
   faChartArea,
   faDollarSign,
-  faUserPlus
+  faUserPlus,
 } from '@fortawesome/free-solid-svg-icons';
 import Card from '../components/common/Card';
 import PageTitle from '../components/common/PageTitle';
@@ -22,9 +18,7 @@ const Dashboard = () => {
   useEffect(() => {
     const getDashboardData = async () => {
       try {
-        const { data } = await fetchContext.authAxios.get(
-          'dashboard-data'
-        );
+        const { data } = await fetchContext.authAxios.get('get-dashboard-data');
         setDashboardData(data);
       } catch (err) {
         console.log(err);
@@ -43,9 +37,7 @@ const Dashboard = () => {
             <div className="w-full sm:w-1/3 sm:mr-2 mb-4 sm:mb-0">
               <DashboardMetric
                 title="Sales Volume"
-                value={formatCurrency(
-                  dashboardData.salesVolume
-                )}
+                value={formatCurrency(dashboardData.salesVolume)}
                 icon={faChartArea}
               />
             </div>
@@ -59,9 +51,7 @@ const Dashboard = () => {
             <div className="w-full sm:w-1/3 sm:ml-2 mb-4 sm:mb-0">
               <DashboardMetric
                 title="Refunds"
-                value={formatCurrency(
-                  dashboardData.refunds
-                )}
+                value={formatCurrency(dashboardData.refunds)}
                 icon={faDollarSign}
               />
             </div>
@@ -69,9 +59,7 @@ const Dashboard = () => {
           <div className="w-full mt-4">
             <Card>
               {dashboardData && (
-                <DashboardChart
-                  salesData={dashboardData.graphData}
-                />
+                <DashboardChart salesData={dashboardData.graphData} />
               )}
             </Card>
           </div>
