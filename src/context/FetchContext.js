@@ -11,7 +11,10 @@ const FetchProvider = ({ children }) => {
 
   const getAccessToken = useCallback(async () => {
     try {
-      const token = await getAccessTokenSilently();
+      const token = await getAccessTokenSilently({
+        audience: process.env.REACT_APP_AUTH0_AUDIENCE,
+      });
+
       setAccessToken(token);
     } catch (err) {
       console.log(err);
