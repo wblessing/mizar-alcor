@@ -1,13 +1,10 @@
 import React, { lazy, Suspense } from 'react';
-import {
-  Auth0Provider,
-  useAuth0
-} from '@auth0/auth0-react';
+import { Auth0Provider, useAuth0 } from '@auth0/auth0-react';
 import {
   BrowserRouter as Router,
   Route,
   Switch,
-  Redirect
+  Redirect,
 } from 'react-router-dom';
 import './App.css';
 import { FetchProvider } from './context/FetchContext';
@@ -50,11 +47,7 @@ const AuthenticatedRoute = ({ children, ...rest }) => {
     <Route
       {...rest}
       render={() =>
-        isAuthenticated ? (
-          <AppShell>{children}</AppShell>
-        ) : (
-          <Redirect to="/" />
-        )
+        isAuthenticated ? <AppShell>{children}</AppShell> : <Redirect to="/" />
       }
     ></Route>
   );
@@ -62,8 +55,7 @@ const AuthenticatedRoute = ({ children, ...rest }) => {
 
 const AdminRoute = ({ children, ...rest }) => {
   const { user, isAuthenticated } = useAuth0();
-  const roles =
-    user[`${process.env.REACT_APP_JWT_NAMESPACE}/roles`];
+  const roles = user[`${process.env.REACT_APP_JWT_NAMESPACE}/roles`];
   const isAdmin = roles[0] === 'admin' ? true : false;
   return (
     <Route
@@ -130,7 +122,7 @@ const requestedScopes = [
   'delete:inventory',
   'read:users',
   'read:user',
-  'edit:user'
+  'edit:user',
 ];
 
 function App() {
@@ -138,7 +130,7 @@ function App() {
     <Auth0Provider
       domain={process.env.REACT_APP_AUTH0_DOMAIN}
       clientId={process.env.REACT_APP_AUTH0_CLIENT_ID}
-      redirectUri={`${window.location.origin}/dashboard`}
+      redirectUri={process.env.REACT_APP_AUTH0_CALLBACK}
       audience={process.env.REACT_APP_AUTH0_AUDIENCE}
       scope={requestedScopes.join(' ')}
     >
