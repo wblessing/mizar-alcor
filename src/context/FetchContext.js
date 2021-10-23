@@ -1,9 +1,4 @@
-import React, {
-  createContext,
-  useEffect,
-  useState,
-  useCallback
-} from 'react';
+import React, { createContext, useEffect, useState, useCallback } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 import axios from 'axios';
 
@@ -16,7 +11,10 @@ const FetchProvider = ({ children }) => {
 
   const getAccessToken = useCallback(async () => {
     try {
-      const token = await getAccessTokenSilently();
+      const token = await getAccessTokenSilently({
+        audience: process.env.REACT_APP_AUTH0_AUDIENCE,
+      });
+
       setAccessToken(token);
     } catch (err) {
       console.log(err);
@@ -28,26 +26,25 @@ const FetchProvider = ({ children }) => {
   }, [getAccessToken]);
 
   const authAxios = axios.create({
-    baseURL: process.env.REACT_APP_API_URL
+    baseURL: process.env.REACT_APP_API_URL,
   });
 
   authAxios.interceptors.request.use(
-    config => {
+    (config) => {
       config.headers.Authorization = `Bearer ${accessToken}`;
       return config;
     },
-    error => {
+    (error) => {
       return Promise.reject(error);
     }
   );
 
   authAxios.interceptors.response.use(
-    response => {
+    (response) => {
       return response;
     },
-    error => {
-      const code =
-        error && error.response ? error.response.status : 0;
+    (error) => {
+      const code = error && error.response ? error.response.status : 0;
       if (code === 401) {
         getAccessToken();
       }
@@ -58,7 +55,7 @@ const FetchProvider = ({ children }) => {
   return (
     <Provider
       value={{
-        authAxios
+        authAxios,
       }}
     >
       {children}
