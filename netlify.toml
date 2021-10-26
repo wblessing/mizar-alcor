@@ -1,6 +1,44 @@
 # https://docs.netlify.com/configure-builds/file-based-configuration/
   
+[build]
+  functions = "functions"
+
+[[redirects]]
+  from = "/delete-inventory-item/*"
+  to = "/.netlify/functions/delete-inventory-item/:splat"
+  status = 200
+
 [[redirects]]
   from = "/get-dashboard-data"
-  to = "https://jwb-mizar-alcor-api.netlify.app/.netlify/functions/get-dashboard-data"
+  to = "/.netlify/functions/get-dashboard-data"
+  status = 200
+
+[[redirects]]
+  from = "/get-inventory-items"
+  to = "/.netlify/functions/get-inventory-items"
+  status = 302
+
+[[redirects]]
+  from = "/get-user-bio"
+  to = "/.netlify/functions/get-user-bio"
+  status = 200
+
+[[redirects]]
+  from = "/get-users"
+  to = "/.netlify/functions/get-users"
+  status = 200
+
+[[redirects]]
+  from = "/update-user-bio"
+  to = "/.netlify/functions/update-user-bio"
+  status = 200
+
+[[redirects]]
+  from = "/update-user-role"
+  to = "/.netlify/functions/update-user-role"
+  status = 200
+
+[[redirects]]
+  from = "/post-inventory-item"
+  to = "/.netlify/functions/post-inventory-item"
   status = 200
