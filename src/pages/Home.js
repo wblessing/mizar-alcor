@@ -1,6 +1,5 @@
 import React from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
-import { Link } from 'react-router-dom';
 import GradientLink from '../components/common/GradientLink';
 import GradientButton from '../components/common/GradientButton';
 import GradientBar from './../components/common/GradientBar';
