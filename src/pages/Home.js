@@ -14,28 +14,12 @@ const Home = () => {
       <GradientBar />
       <div className="w-full top-0 bg-white px-10 py-5">
         <div className="flex justify-between">
-          <img
-            className="w-32 h-full"
-            src={logo}
-            alt="Logo"
-          />
+          <img className="w-32 h-full" src={logo} alt="Logo" />
           <div className="flex items-center">
-            <Link
-              to="/signup"
-              className="text-blue-700 mr-6"
-            >
-              Sign Up
-            </Link>
             {isAuthenticated ? (
-              <GradientLink
-                to="/dashboard"
-                text="Go to Dashboard"
-              />
+              <GradientLink to="/dashboard" text="Go to Dashboard" />
             ) : (
-              <GradientButton
-                onClick={loginWithRedirect}
-                text="Log In"
-              />
+              <GradientButton onClick={loginWithRedirect} text="Log In" />
             )}
           </div>
         </div>
@@ -58,10 +42,7 @@ const Home = () => {
             </h2>
             <div className="mt-4 sm:mt-10 w-48">
               {isAuthenticated ? (
-                <GradientLink
-                  to="/dashboard"
-                  text="Go to Dashboard"
-                />
+                <GradientLink to="/dashboard" text="Go to Dashboard" />
               ) : (
                 <GradientButton
                   onClick={loginWithRedirect}
