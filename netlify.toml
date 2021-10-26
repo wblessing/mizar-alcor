@@ -1,0 +1,6 @@
+# https://docs.netlify.com/configure-builds/file-based-configuration/
+  
+[[redirects]]
+  from = "/get-dashboard-data"
+  to = "https://jwb-mizar-alcor-api.netlify.app/.netlify/functions/get-dashboard-data"
+  status = 200
