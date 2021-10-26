@@ -5,10 +5,7 @@ exports.handler = requireAuth(async (event, context, callback) => {
   context.callbackWaitsForEmptyEventLoop = false;
   try {
     const { claims } = context.identityContext;
-
-    console.log('claims sub before substring' + claims.sub);
     const userId = getUserId(claims);
-    console.log('claims sub after substring' + userId);
 
     const User = await UserConnection.createConnection();
     const foundUser = await User.findOne({

@@ -16,7 +16,7 @@
 [[redirects]]
   from = "/get-inventory-items"
   to = "/.netlify/functions/get-inventory-items"
-  status = 302
+  status = 200
 
 [[redirects]]
   from = "/get-user-bio"
@@ -31,11 +31,6 @@
 [[redirects]]
   from = "/update-user-bio"
   to = "/.netlify/functions/update-user-bio"
-  status = 200
-
-[[redirects]]
-  from = "/update-user-role"
-  to = "/.netlify/functions/update-user-role"
   status = 200
 
 [[redirects]]
