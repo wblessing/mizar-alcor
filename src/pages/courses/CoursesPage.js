@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import CourseList from './CourseList';
 import { Redirect } from 'react-router-dom';
-import Spinner from '../../components/common/redux/Spinner';
+import Spinner from './common/Spinner';
 import { toast } from 'react-toastify';
 
 class CoursesPage extends React.Component {
