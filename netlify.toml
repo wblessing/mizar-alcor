@@ -3,6 +3,12 @@
 [build]
   functions = "functions"
 
+
+[[redirects]]
+    from = "/api/*"
+    to= "/.netlify/functions/:splat"
+    status = 200
+    
 [[redirects]]
   from = "/delete-inventory-item/*"
   to = "/.netlify/functions/delete-inventory-item/:splat"
@@ -37,8 +43,3 @@
   from = "/post-inventory-item"
   to = "/.netlify/functions/post-inventory-item"
   status = 200
-
-[[redirects]]
-    from = "/api/*"
-    to= "/.netlify/functions/:splat"
-    status = 200
