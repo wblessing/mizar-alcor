@@ -19,7 +19,7 @@ let connection = null;
 const createConnection = async () => {
   try {
     if (!connection) {
-      connection = mongoose.createConnection(process.env.ATLAS_URL, {
+      connection = mongoose.createConnection(process.env.FUNC_MONGO_URL, {
         bufferCommands: false,
         bufferMaxEntries: 0,
         useNewUrlParser: true,

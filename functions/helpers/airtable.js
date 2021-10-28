@@ -1,9 +1,10 @@
-require('dotenv').config();
 var Airtable = require('airtable');
-var base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY }).base(
-  process.env.AIRTABLE_BASE_ID
+require('dotenv').config();
+
+var base = new Airtable({ apiKey: process.env.FUNC_AIRTABLE_API_KEY }).base(
+  process.env.FUNC_AIRTABLE_BASE_ID
 );
-const authorsTable = base(process.env.AIRTABLE_AUTHORS_TABLE);
-const coursesTable = base(process.env.AIRTABLE_COURSES_TABLE);
+const authorsTable = base(process.env.FUNC_AIRTABLE_AUTHORS_TABLE);
+const coursesTable = base(process.env.FUNC_AIRTABLE_COURSES_TABLE);
 
 module.exports = { coursesTable, authorsTable };
