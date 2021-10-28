@@ -2,6 +2,7 @@ import React from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 import {
   faAddressCard,
+  faAward,
   faChartLine,
   faChartPie,
   faCogs,
@@ -24,6 +25,12 @@ const navItems = [
     path: 'inventory',
     icon: faChartPie,
     allowedRoles: ['admin'],
+  },
+  {
+    label: 'Courses',
+    path: 'courses',
+    icon: faAward,
+    allowedRoles: ['user', 'admin'],
   },
   {
     label: 'Account',
