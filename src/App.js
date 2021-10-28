@@ -10,12 +10,15 @@ import './App.css';
 import { FetchProvider } from './context/FetchContext';
 
 import AppShell from './AppShell';
+
 import Home from './pages/Home';
 import FourOFour from './pages/FourOFour';
+
 import logo from './images/logo.png';
 
 const Dashboard = lazy(() => import('./pages/Dashboard'));
 const Inventory = lazy(() => import('./pages/Inventory'));
+const Account = lazy(() => import('./pages/Account'));
 const Settings = lazy(() => import('./pages/Settings'));
 const Users = lazy(() => import('./pages/Users'));
 
@@ -95,6 +98,9 @@ const AppRoutes = () => {
           <AdminRoute path="/inventory">
             <Inventory />
           </AdminRoute>
+          <AuthenticatedRoute path="/account">
+            <Account />
+          </AuthenticatedRoute>
           <AuthenticatedRoute path="/settings">
             <Settings />
           </AuthenticatedRoute>

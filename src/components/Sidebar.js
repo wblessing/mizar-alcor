@@ -1,6 +1,7 @@
 import React from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 import {
+  faAddressCard,
   faChartLine,
   faChartPie,
   faCogs,
@@ -23,6 +24,12 @@ const navItems = [
     path: 'inventory',
     icon: faChartPie,
     allowedRoles: ['admin'],
+  },
+  {
+    label: 'Account',
+    path: 'account',
+    icon: faAddressCard,
+    allowedRoles: ['user', 'admin'],
   },
   {
     label: 'Settings',
