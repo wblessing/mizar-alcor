@@ -1,7 +1,7 @@
 import { handleResponse, handleError } from './apiUtils';
 
-const baseUrl = '/api/courses/';
-console.log('/api/courses/ called');
+const baseUrl = '/api/courses';
+console.log('/api/courses');
 
 export function getCourses() {
   return fetch(baseUrl).then(handleResponse).catch(handleError);
