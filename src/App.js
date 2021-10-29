@@ -103,6 +103,12 @@ const AppRoutes = () => {
             <CoursesPage />
           </AuthenticatedRoute>
 
+          {/*
+          TODO: jwb
+          <Route path="/course/:slug" component={ManageCoursePage} />
+          <Route path="/course" component={ManageCoursePage} />
+          */}
+
           <AuthenticatedRoute path="/account">
             <Account />
           </AuthenticatedRoute>
