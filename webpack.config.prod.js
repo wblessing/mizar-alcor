@@ -55,6 +55,17 @@ module.exports = {
         use: ['babel-loader', 'eslint-loader'],
       },
       {
+        test: /\.(jpg|jpeg|gif|png)$/,
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+            publicPath: 'images',
+            outputPath: 'images',
+          },
+        },
+      },
+      {
         test: /(\.css)$/,
         use: [
           MiniCssExtractPlugin.loader,

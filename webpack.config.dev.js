@@ -24,7 +24,7 @@ module.exports = {
   },
   plugins: [
     new webpack.DefinePlugin({
-      'process.env.API_BASE_URL': JSON.stringify(process.env.APP_API_BASE_URL),
+      'process.env.API_BASE_URL': JSON.stringify(process.env.API_BASE_URL),
     }),
     new HtmlWebpackPlugin({
       template: 'public/index.html',
@@ -41,6 +41,17 @@ module.exports = {
       {
         test: /(\.css)$/,
         use: ['style-loader', 'css-loader'],
+      },
+      {
+        test: /\.(jpg|jpeg|gif|png)$/,
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+            publicPath: 'images',
+            outputPath: 'images',
+          },
+        },
       },
     ],
   },
