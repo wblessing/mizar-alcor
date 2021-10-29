@@ -1,7 +1,7 @@
-import React from "react";
-import { mount } from "enzyme";
-import { authors, newCourse, courses } from "../../../tools/mockData";
-import { ManageCoursePage } from "./ManageCoursePage";
+import React from 'react';
+import { mount } from 'enzyme';
+import { authors, newCourse, courses } from '../../tools/mockData';
+import { ManageCoursePage } from './ManageCoursePage';
 
 function render(args) {
   const defaultProps = {
@@ -16,7 +16,7 @@ function render(args) {
     loadAuthors: jest.fn(),
     loadCourses: jest.fn(),
     course: newCourse,
-    match: {}
+    match: {},
   };
 
   const props = { ...defaultProps, ...args };
@@ -24,9 +24,9 @@ function render(args) {
   return mount(<ManageCoursePage {...props} />);
 }
 
-it("sets error when attempting to save an empty title field", () => {
+it('sets error when attempting to save an empty title field', () => {
   const wrapper = render();
-  wrapper.find("form").simulate("submit");
-  const error = wrapper.find(".alert").first();
-  expect(error.text()).toBe("Title is required.");
+  wrapper.find('form').simulate('submit');
+  const error = wrapper.find('.alert').first();
+  expect(error.text()).toBe('Title is required.');
 });
