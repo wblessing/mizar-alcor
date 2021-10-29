@@ -1,7 +1,7 @@
 import { handleResponse, handleError } from './apiUtils';
 require('dotenv').config();
 
-const baseUrl = 'http://localhost:8888/api/courses/';
+const baseUrl = 'https://jwb-mizal-app.netlify.app/api/courses/';
 //const baseUrl = process.env.FUNC_AIRTABLE_API_URL + '/api/courses/';
 
 export function getCourses() {
