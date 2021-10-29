@@ -6,14 +6,12 @@ import {
   Switch,
   Redirect,
 } from 'react-router-dom';
+
 import './App.css';
 import { FetchProvider } from './context/FetchContext';
-
 import AppShell from './AppShell';
-
 import Home from './pages/Home';
 import FourOFour from './pages/FourOFour';
-
 import logo from './images/logo.png';
 
 const Dashboard = lazy(() => import('./pages/Dashboard'));
