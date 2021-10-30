@@ -1,0 +1,99 @@
+import React, { useState, useEffect } from 'react';
+import { connect } from 'react-redux';
+import { useAuth0 } from '@auth0/auth0-react';
+import CourseList from './CourseList';
+import { Redirect } from 'react-router-dom';
+import Spinner from './common/Spinner';
+import { toast } from 'react-toastify';
+import PropTypes from 'prop-types';
+import * as courseActions from '../../redux/actions/courseActions';
+import * as authorActions from '../../redux/actions/authorActions';
+import { bindActionCreators } from 'redux';
+import { getAuthors } from '../../api/authorApi';
+
+// import 'bootstrap/dist/css/bootstrap.min.css';
+
+const CoursesPage = (props) => {
+  const { getAccessTokenSilently } = useAuth0();
+  const [accessToken, setAccessToken] = useState();
+  const [redirectToAddCoursePage, setRedirectToAddCoursePage] = useState(false);
+  const courses = props.courses;
+  const authors = props.authors;
+  const actions = props.actions;
+
+  useEffect(() => {
+    const getAccessToken = async () => {
+      try {
+        const token = await getAccessTokenSilently();
+        setAccessToken(token);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+
+    if (courses.length === 0) {
+      console.log('Loading courses token is ' + accessToken);
+      actions.loadCourses().catch((error) => {
+        alert('Loading courses failed' + error);
+      });
+    }
+
+    if (authors.length === 0) {
+      actions.loadAuthors().catch((error) => {
+        alert('Loading authors failed' + error);
+      });
+    }
+
+    getAccessToken();
+  }, [getAccessTokenSilently]);
+
+  const handleDeleteCourse = async (course) => {
+    toast.success('Course deleted');
+    try {
+      await this.props.actions.deleteCourse(course);
+    } catch (error) {
+      toast.error('Delete failed. ' + error.message, { autoClose: false });
+    }
+  };
+
+  return (
+    <>
+      {redirectToAddCoursePage && <Redirect to="/course" />}
+      <h2>Courses</h2>
+    </>
+  );
+};
+
+CoursesPage.propTypes = {
+  authors: PropTypes.array.isRequired,
+  courses: PropTypes.array.isRequired,
+  actions: PropTypes.object.isRequired,
+  loading: PropTypes.bool.isRequired,
+};
+
+const mapStateToProps = (state) => ({
+  courses:
+    getAuthors().length === 0
+      ? []
+      : state.courses.map((course) => {
+          return {
+            ...course,
+            authorName: state.authors.find((a) => a.id === course.authorId)
+              .name,
+          };
+        }),
+  authors: state.authors,
+  loading: state.apiCallsInProgress > 0,
+});
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    actions: {
+      loadCourses: bindActionCreators(courseActions.loadCourses, dispatch),
+      loadAuthors: bindActionCreators(authorActions.loadAuthors, dispatch),
+      deleteCourse: bindActionCreators(courseActions.deleteCourse, dispatch),
+    },
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(CoursesPage);
