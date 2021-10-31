@@ -10,6 +10,7 @@ import * as courseActions from '../../redux/actions/courseActions';
 import * as authorActions from '../../redux/actions/authorActions';
 import { bindActionCreators } from 'redux';
 import { getAuthors } from '../../api/authorApi';
+import { getCourses } from '../../api/courseApi';
 
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -32,9 +33,8 @@ const CoursesPage = (props) => {
     };
 
     if (courses.length === 0) {
-      console.log('Loading courses token is ' + accessToken);
       actions.loadCourses().catch((error) => {
-        alert('Loading courses failed' + error);
+        alert('Loading coursessssss failed' + error);
       });
     }
 
