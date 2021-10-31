@@ -10,6 +10,11 @@
     status = 200
     
 [[redirects]]
+  from = "/get-courses"
+  to = "/.netlify/functions/get-courses"
+  status = 200
+
+[[redirects]]
   from = "/delete-inventory-item/*"
   to = "/.netlify/functions/delete-inventory-item/:splat"
   status = 200

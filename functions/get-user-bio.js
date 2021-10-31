@@ -14,7 +14,6 @@ exports.handler = requireAuth(async (event, context, callback) => {
       .lean()
       .select('bio');
 
-    console.log('user found is ' + foundUser);
     return callback(null, {
       statusCode: 200,
       body: JSON.stringify({ bio: foundUser.bio }),
