@@ -16,10 +16,9 @@ class CoursesPage extends React.Component {
   };
 
   componentDidMount() {
-    const { courses, authors, actions } = this.props;
-
+    const { courses, authors, actions, accessToken } = this.props;
     if (courses.length === 0) {
-      actions.loadCourses('TODO').catch((error) => {
+      actions.loadCourses(accessToken).catch((error) => {
         alert('Loading courses failed' + error);
       });
     }
@@ -73,6 +72,7 @@ CoursesPage.propTypes = {
   courses: PropTypes.array.isRequired,
   actions: PropTypes.object.isRequired,
   loading: PropTypes.bool.isRequired,
+  accessToken: PropTypes.string.isRequired,
 };
 
 function mapStateToProps(state) {

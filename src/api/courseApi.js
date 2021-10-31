@@ -3,6 +3,7 @@ import { handleResponse, handleError } from './apiUtils';
 const baseUrl = '/api/courses/';
 
 export function getCourses(accessToken) {
+  console.log('course api access token ' + accessToken);
   return fetch(baseUrl, {
     headers: { Authorization: `Bearer ${accessToken}` },
   })
