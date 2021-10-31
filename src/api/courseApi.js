@@ -2,8 +2,12 @@ import { handleResponse, handleError } from './apiUtils';
 
 const baseUrl = '/api/courses/';
 
-export function getCourses() {
-  return fetch(baseUrl).then(handleResponse).catch(handleError);
+export function getCourses(accessToken) {
+  return fetch(baseUrl, {
+    headers: { authorization: accessToken },
+  })
+    .then(handleResponse)
+    .catch(handleError);
 }
 
 export function saveCourse(course) {
