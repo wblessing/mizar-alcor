@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { Auth0Provider, useAuth0 } from '@auth0/auth0-react';
 import {
   BrowserRouter as Router,
@@ -18,6 +18,7 @@ const Dashboard = lazy(() => import('./pages/Dashboard'));
 const Inventory = lazy(() => import('./pages/Inventory'));
 const CoursesPage = lazy(() => import('./pages/courses/CoursesPage'));
 const Account = lazy(() => import('./pages/Account'));
+const ManageCoursePage = lazy(() => import('./pages/courses/ManageCoursePage'));
 const Settings = lazy(() => import('./pages/Settings'));
 const Users = lazy(() => import('./pages/Users'));
 
@@ -39,9 +40,7 @@ const UnauthenticatedRoutes = () => (
 );
 
 const AuthenticatedRoute = ({ children, ...rest }) => {
-  const { isAuthenticated, user } = useAuth0();
-
-  console.log(user);
+  const { isAuthenticated } = useAuth0();
   return (
     <Route
       {...rest}
@@ -79,7 +78,21 @@ const LoadingLogo = () => {
 };
 
 const AppRoutes = () => {
-  const { isLoading } = useAuth0();
+  const { isLoading, getAccessTokenSilently } = useAuth0();
+  const [accessToken, setAccessToken] = useState();
+
+  useEffect(() => {
+    const getAccessToken = async () => {
+      try {
+        const token = await getAccessTokenSilently();
+        setAccessToken(token);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    getAccessToken();
+  }, [getAccessTokenSilently]);
+
   if (isLoading) {
     return (
       <div className="h-screen flex justify-center">
@@ -94,33 +107,27 @@ const AppRoutes = () => {
           <AuthenticatedRoute path="/dashboard">
             <Dashboard />
           </AuthenticatedRoute>
-
           <AdminRoute path="/inventory">
             <Inventory />
           </AdminRoute>
-
           <AuthenticatedRoute path="/courses">
-            <CoursesPage />
+            <CoursesPage accessToken={accessToken} />
           </AuthenticatedRoute>
-
-          {/*
-          TODO: jwb
-          <Route path="/course/:slug" component={ManageCoursePage} />
-          <Route path="/course" component={ManageCoursePage} />
-          */}
-
+          <AuthenticatedRoute path="/course/:slug">
+            <ManageCoursePage accessToken={accessToken} />
+          </AuthenticatedRoute>
+          <AuthenticatedRoute path="/course">
+            <ManageCoursePage accessToken={accessToken} />
+          </AuthenticatedRoute>
           <AuthenticatedRoute path="/account">
             <Account />
           </AuthenticatedRoute>
-
           <AuthenticatedRoute path="/settings">
             <Settings />
           </AuthenticatedRoute>
-
           <AuthenticatedRoute path="/users">
             <Users />
           </AuthenticatedRoute>
-
           <UnauthenticatedRoutes />
         </Switch>
       </Suspense>
