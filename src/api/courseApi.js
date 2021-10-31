@@ -4,7 +4,7 @@ const baseUrl = '/api/courses/';
 
 export function getCourses(accessToken) {
   return fetch(baseUrl, {
-    headers: { authorization: accessToken },
+    headers: { Authorization: `Bearer ${accessToken}` },
   })
     .then(handleResponse)
     .catch(handleError);
