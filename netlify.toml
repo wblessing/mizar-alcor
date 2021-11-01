@@ -2,16 +2,20 @@
   
 [build]
   functions = "functions"
-
-
+    
 [[redirects]]
     from = "/api/*"
     to= "/.netlify/functions/:splat"
     status = 200
-    
+
 [[redirects]]
   from = "/get-courses"
   to = "/.netlify/functions/get-courses"
+  status = 200
+  
+[[redirects]]
+  from = "/delete-course/*"
+  to = "/.netlify/functions/delete-course/:splat"
   status = 200
 
 [[redirects]]

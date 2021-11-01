@@ -51,11 +51,11 @@ export function saveCourse(course) {
   };
 }
 
-export function deleteCourse(course) {
+export function deleteCourse(course, accessToken) {
   return function (dispatch) {
     // Doing optimistic delete, so not dispatching begin/end api call
     // actions, or apiCallError action since we're not showing the loading status for this.
     dispatch(deleteCourseOptimistic(course));
-    return courseApi.deleteCourse(course.id);
+    return courseApi.deleteCourse(course, accessToken);
   };
 }
