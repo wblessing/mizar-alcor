@@ -1,11 +1,12 @@
 const { coursesTable } = require('./helpers/airtable');
 const { requireAuth } = require('../lib/auth');
-const formattedReturn = require('./helpers/formattedReturn');
 
 exports.handler = requireAuth(async (event, context, callback) => {
   context.callbackWaitsForEmptyEventLoop = false;
 
   try {
+    const { claims } = context.identityContext;
+
     const courses = await coursesTable.select().firstPage();
     const formattedCourses = courses.map((course) => ({
       id: course.id,

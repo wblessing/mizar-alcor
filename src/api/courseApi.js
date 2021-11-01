@@ -1,6 +1,6 @@
 import { handleResponse, handleError } from './apiUtils';
 
-const baseUrl = '/api/courses/';
+const baseUrl = '/get-courses/';
 
 export function getCourses(accessToken) {
   console.log('course api access token ' + accessToken);
