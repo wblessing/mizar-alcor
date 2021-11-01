@@ -4,13 +4,15 @@ const { requireAuth } = require('../lib/auth');
 exports.handler = requireAuth(async (event, context, callback) => {
   context.callbackWaitsForEmptyEventLoop = false;
 
+  const { id2 } = JSON.parse(event.body);
+  console.log('id22222222222222222222 is ' + id2);
   const queryString = event.path;
   const id = queryString.split('/')[2];
   console.log('id is ' + id);
 
   try {
     console.log('before call table destroy for id ' + id);
-    const deletedCourse = await coursesTable.destroy(id);
+    const deletedCourse = await coursesTable.destroy([id]);
     console.log('after call table destroy for id ' + id);
 
     return callback(null, {
