@@ -10,7 +10,7 @@
 
 [[redirects]]
   from = "/get-authors"
-  to = "/.netlify/functions/get-courses"
+  to = "/.netlify/functions/get-authors"
   status = 200
 
 [[redirects]]
