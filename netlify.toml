@@ -14,8 +14,8 @@
   status = 200
   
 [[redirects]]
-  from = "/delete-course/*"
-  to = "/.netlify/functions/delete-course/:splat"
+  from = "/delete-course/"
+  to = "/.netlify/functions/delete-course"
   status = 200
 
 [[redirects]]
