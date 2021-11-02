@@ -1,7 +1,10 @@
 import { handleResponse, handleError } from './apiUtils';
 
-const baseUrl = '/api/authors/';
-
-export function getAuthors() {
-  return fetch(baseUrl).then(handleResponse).catch(handleError);
+export function getAuthors(accessToken) {
+  console.log('load courses api access token ' + accessToken);
+  return fetch('/get-authors/', {
+    headers: { Authorization: `Bearer ${accessToken}` },
+  })
+    .then(handleResponse)
+    .catch(handleError);
 }

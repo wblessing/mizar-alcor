@@ -9,6 +9,11 @@
     status = 200
 
 [[redirects]]
+  from = "/get-authors"
+  to = "/.netlify/functions/get-courses"
+  status = 200
+
+[[redirects]]
   from = "/get-courses"
   to = "/.netlify/functions/get-courses"
   status = 200
