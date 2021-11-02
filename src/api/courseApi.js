@@ -23,9 +23,9 @@ export function saveCourse(course) {
 
 export function deleteCourse(course, accessToken) {
   console.log('delete course api access token ' + accessToken);
-  return fetch('/delete-course/' + course.id, {
+  return fetch('/delete-course/' {
     method: 'DELETE',
-    body: JSON.stringify(course),
+    body: JSON.stringify({ id: course.id }),
     headers: {
       Authorization: `Bearer ${accessToken}`,
     },
