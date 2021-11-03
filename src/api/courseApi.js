@@ -12,7 +12,8 @@ export function getCourses(accessToken) {
 }
 
 export function saveCourse(course) {
-  return fetch(baseUrl + (course.id || ''), {
+  // TODO
+  return fetch('/create-course/' + (course.id || ''), {
     method: course.id ? 'PUT' : 'POST',
     headers: { 'content-type': 'application/json' },
     body: JSON.stringify(course),

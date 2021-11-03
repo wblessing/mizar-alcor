@@ -18,7 +18,7 @@ const Dashboard = lazy(() => import('./pages/Dashboard'));
 const Inventory = lazy(() => import('./pages/Inventory'));
 const CoursesPage = lazy(() => import('./pages/courses/CoursesPage'));
 const Account = lazy(() => import('./pages/Account'));
-// const ManageCoursePage = lazy(() => import('./pages/courses/ManageCoursePage'));
+const ManageCoursePage = lazy(() => import('./pages/courses/ManageCoursePage'));
 const Settings = lazy(() => import('./pages/Settings'));
 const Users = lazy(() => import('./pages/Users'));
 
@@ -113,14 +113,12 @@ const AppRoutes = () => {
           <AuthenticatedRoute path="/courses">
             <CoursesPage accessToken={accessToken} />
           </AuthenticatedRoute>
-          {/*
           <AuthenticatedRoute path="/course/:slug">
             <ManageCoursePage accessToken={accessToken} />
           </AuthenticatedRoute>
           <AuthenticatedRoute path="/course">
             <ManageCoursePage accessToken={accessToken} />
           </AuthenticatedRoute>
-          */}
           <AuthenticatedRoute path="/account">
             <Account />
           </AuthenticatedRoute>
