@@ -19,6 +19,16 @@
   status = 200
   
 [[redirects]]
+  from = "/create-course"
+  to = "/.netlify/functions/create-course"
+  status = 200
+  
+[[redirects]]
+  from = "/update-course"
+  to = "/.netlify/functions/update-course"
+  status = 200
+  
+[[redirects]]
   from = "/delete-course/"
   to = "/.netlify/functions/delete-course"
   status = 200
