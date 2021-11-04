@@ -11,13 +11,15 @@ const CourseList = ({ courses, onDeleteClick }) => (
         <th>Title</th>
         <th>Author</th>
         <th>Category</th>
+        <th>URL</th>
+        <th>Slug</th>
         <th />
       </tr>
     </thead>
     <tbody>
       {courses.map((course) => {
         return (
-          <tr key={course.id}>
+          <tr key={course.title}>
             <td>
               <a
                 className="btn btn-light"
@@ -31,6 +33,8 @@ const CourseList = ({ courses, onDeleteClick }) => (
             </td>
             <td>{course.authorName}</td>
             <td>{course.category}</td>
+            <td>{course.url}</td>
+            <td>{course.slug}</td>
             <td>
               <DangerButton
                 text="Delete"

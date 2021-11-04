@@ -78,10 +78,11 @@ const authors = [
 ];
 
 const newCourse = {
-  id: null,
   title: '',
-  authorId: null,
+  url: '',
+  slug: '',
   category: '',
+  authorId: null,
 };
 
 // Using CommonJS style export so we can consume via Node (without using Babel-node)

@@ -1,9 +1,6 @@
 import { handleResponse, handleError } from './apiUtils';
 
-const baseUrl = '/get-courses/';
-
 export function getCourses(accessToken) {
-  console.log('load courses api access token ' + accessToken);
   return fetch('/get-courses/', {
     headers: { Authorization: `Bearer ${accessToken}` },
   })
@@ -11,11 +8,13 @@ export function getCourses(accessToken) {
     .catch(handleError);
 }
 
-export function saveCourse(course) {
-  // TODO
+export function saveCourse(course, accessToken) {
   return fetch('/create-course/' + (course.id || ''), {
     method: course.id ? 'PUT' : 'POST',
-    headers: { 'content-type': 'application/json' },
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+      'content-type': 'application/json',
+    },
     body: JSON.stringify(course),
   })
     .then(handleResponse)
@@ -23,7 +22,6 @@ export function saveCourse(course) {
 }
 
 export function deleteCourse(course, accessToken) {
-  console.log('delete course api access token ' + accessToken);
   return fetch('/delete-course/', {
     method: 'DELETE',
     body: JSON.stringify({ id: course.id }),

@@ -1,14 +1,29 @@
 const { coursesTable } = require('./helpers/airtable');
-const formattedReturn = require('./helpers/formattedReturn');
+const { requireAuth } = require('../lib/auth');
 
-exports.handler = async (event) => {
+exports.handler = requireAuth(async (event, context, callback) => {
+  context.callbackWaitsForEmptyEventLoop = false;
   const fields = JSON.parse(event.body);
-  console.log('fields for create ' + fields);
+
   try {
     const createdCourse = await coursesTable.create([{ fields }]);
-    return formattedReturn(200, createdCourse);
+
+    const formattedCourse = {
+      id: createdCourse[0].id,
+      ...fields,
+    };
+
+    return callback(null, {
+      statusCode: 200,
+      body: JSON.stringify(formattedCourse),
+    });
   } catch (err) {
-    console.error(err);
-    return formattedReturn(500, {});
+    console.log('the err', err);
+    return callback(null, {
+      statusCode: 400,
+      body: JSON.stringify({
+        error: err,
+      }),
+    });
   }
-};
+});

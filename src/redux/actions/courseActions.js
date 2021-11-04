@@ -33,12 +33,12 @@ export function loadCourses(accessToken) {
   };
 }
 
-export function saveCourse(course) {
+export function saveCourse(course, accessToken) {
   //eslint-disable-next-line no-unused-vars
   return function (dispatch, getState) {
     dispatch(beginApiCall());
     return courseApi
-      .saveCourse(course)
+      .saveCourse(course, accessToken)
       .then((savedCourse) => {
         course.id
           ? dispatch(updateCourseSuccess(savedCourse))

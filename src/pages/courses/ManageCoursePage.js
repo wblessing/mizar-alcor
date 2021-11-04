@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { loadCourses, saveCourse } from '../../redux/actions/courseActions';
 import { loadAuthors } from '../../redux/actions/authorActions';
@@ -14,16 +15,18 @@ export function ManageCoursePage({
   loadAuthors,
   loadCourses,
   saveCourse,
-  history,
+  accessToken,
   ...props
 }) {
   const [course, setCourse] = useState({ ...props.course });
   const [errors, setErrors] = useState({});
   const [saving, setSaving] = useState(false);
 
+  let history = useHistory();
+
   useEffect(() => {
     if (courses.length === 0) {
-      loadCourses().catch((error) => {
+      loadCourses(accessToken).catch((error) => {
         alert('Loading courses failed' + error);
       });
     } else {
@@ -31,7 +34,7 @@ export function ManageCoursePage({
     }
 
     if (authors.length === 0) {
-      loadAuthors().catch((error) => {
+      loadAuthors(accessToken).catch((error) => {
         alert('Loading authors failed' + error);
       });
     }
@@ -62,7 +65,7 @@ export function ManageCoursePage({
     event.preventDefault();
     if (!formIsValid()) return;
     setSaving(true);
-    saveCourse(course)
+    saveCourse(course, accessToken)
       .then(() => {
         toast.success('Course saved.');
         history.push('/courses');
@@ -94,7 +97,7 @@ ManageCoursePage.propTypes = {
   loadCourses: PropTypes.func.isRequired,
   loadAuthors: PropTypes.func.isRequired,
   saveCourse: PropTypes.func.isRequired,
-  history: PropTypes.object.isRequired,
+  accessToken: PropTypes.string.isRequired,
 };
 
 export function getCourseBySlug(courses, slug) {
