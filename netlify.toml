@@ -54,6 +54,6 @@
   status = 200
 
 [[redirects]]
-  from = "/post-inventory-item"
-  to = "/.netlify/functions/post-inventory-item"
+  from = "/create-inventory-item"
+  to = "/.netlify/functions/create-inventory-item"
   status = 200

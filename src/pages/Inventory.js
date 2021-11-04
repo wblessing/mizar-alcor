@@ -68,7 +68,7 @@ const Inventory = () => {
   const onSubmit = async (values, resetForm) => {
     try {
       const { data } = await fetchContext.authAxios.post(
-        'post-inventory-item',
+        'create-inventory-item',
         values
       );
       setInventory([...inventory, data.inventoryItem]);
