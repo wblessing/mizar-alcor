@@ -7,18 +7,16 @@ exports.handler = requireScope(
     context.callbackWaitsForEmptyEventLoop = false;
     try {
       const { claims } = context.identityContext;
-
-      console.log('claims sub before substring' + claims.sub);
       const userId = getUserId(claims);
-      console.log('claims sub after substring' + userId);
-
       const body = JSON.parse(event.body);
+
       const InventoryItem = await InventoryItemConnection.createConnection();
       const input = Object.assign({}, body, {
         user: userId,
       });
       const newInventoryItem = new InventoryItem(input);
       await newInventoryItem.save();
+
       return callback(null, {
         statusCode: 200,
         body: JSON.stringify({
