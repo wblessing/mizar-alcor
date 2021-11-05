@@ -17,6 +17,7 @@ function render(args) {
     loadCourses: jest.fn(),
     course: newCourse,
     match: {},
+    accessToken: '',
   };
 
   const props = { ...defaultProps, ...args };
