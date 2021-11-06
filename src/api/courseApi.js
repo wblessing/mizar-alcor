@@ -9,7 +9,12 @@ export function getCourses(accessToken) {
 }
 
 export function saveCourse(course, accessToken) {
-  return fetch('/create-course/' + (course.id || ''), {
+  let baseUrl = '/create-course/';
+  if (course.id) {
+    baseUrl = '/update-course/';
+  }
+
+  return fetch(baseUrl + (course.id || ''), {
     method: course.id ? 'PUT' : 'POST',
     headers: {
       Authorization: `Bearer ${accessToken}`,

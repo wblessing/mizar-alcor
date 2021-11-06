@@ -24,6 +24,11 @@
   status = 200
   
 [[redirects]]
+  from = "/update-course/*"
+  to = "/.netlify/functions/update-course/:splat"
+  status = 200
+  
+[[redirects]]
   from = "/update-course"
   to = "/.netlify/functions/update-course"
   status = 200
