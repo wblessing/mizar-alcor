@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { loadCourses, saveCourse } from '../../redux/actions/courseActions';
 import { loadAuthors } from '../../redux/actions/authorActions';
@@ -22,7 +22,7 @@ export function ManageCoursePage({
   const [errors, setErrors] = useState({});
   const [saving, setSaving] = useState(false);
 
-  let history = useHistory();
+  const history = useHistory();
 
   useEffect(() => {
     if (courses.length === 0) {
@@ -105,7 +105,7 @@ export function getCourseBySlug(courses, slug) {
 }
 
 function mapStateToProps(state, ownProps) {
-  const slug = ownProps.slug;
+  const slug = ownProps.match.params.slug;
   const course =
     slug && state.courses.length > 0
       ? getCourseBySlug(state.courses, slug)
@@ -123,4 +123,6 @@ const mapDispatchToProps = {
   saveCourse,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ManageCoursePage);
+export default withRouter(
+  connect(mapStateToProps, mapDispatchToProps)(ManageCoursePage)
+);
