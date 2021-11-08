@@ -12,8 +12,6 @@ import { toast } from 'react-toastify';
 export function ManageCoursePage({
   courses,
   authors,
-  loadAuthors,
-  loadCourses,
   saveCourse,
   accessToken,
   ...props
@@ -23,22 +21,6 @@ export function ManageCoursePage({
   const [saving, setSaving] = useState(false);
 
   const history = useHistory();
-
-  useEffect(() => {
-    if (courses.length === 0) {
-      loadCourses(accessToken).catch((error) => {
-        alert('Loading courses failed' + error);
-      });
-    } else {
-      setCourse({ ...props.course });
-    }
-
-    if (authors.length === 0) {
-      loadAuthors(accessToken).catch((error) => {
-        alert('Loading authors failed' + error);
-      });
-    }
-  }, [props.course]);
 
   function handleChange(event) {
     const { name, value } = event.target;
@@ -94,8 +76,6 @@ ManageCoursePage.propTypes = {
   course: PropTypes.object.isRequired,
   authors: PropTypes.array.isRequired,
   courses: PropTypes.array.isRequired,
-  loadCourses: PropTypes.func.isRequired,
-  loadAuthors: PropTypes.func.isRequired,
   saveCourse: PropTypes.func.isRequired,
   accessToken: PropTypes.string.isRequired,
 };
@@ -118,8 +98,6 @@ function mapStateToProps(state, ownProps) {
 }
 
 const mapDispatchToProps = {
-  loadCourses,
-  loadAuthors,
   saveCourse,
 };
 
