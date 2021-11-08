@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import TextInput from './common/TextInput';
 import SelectInput from './common/SelectInput';
+import PageTitle from '../../components/common/PageTitle';
+import GradientButton from '../../components/common/GradientButton';
 
 const CourseForm = ({
   course,
@@ -13,7 +15,7 @@ const CourseForm = ({
 }) => {
   return (
     <form onSubmit={onSave}>
-      <h2>{course.id ? 'Edit' : 'Add'} Course</h2>
+      <PageTitle title={course.id ? 'Edit Course' : 'Add Course'} />
       {errors.onSave && (
         <div className="alert alert-danger" role="alert">
           {errors.onSave}
@@ -64,9 +66,9 @@ const CourseForm = ({
         error={errors.category}
       />
 
-      <button type="submit" disabled={saving} className="btn btn-primary">
-        {saving ? 'Saving...' : 'Save'}
-      </button>
+      <div className="w-full sm:w-1/4 mt-4">
+        <GradientButton type="submit" text={saving ? 'Saving...' : 'Save'} />
+      </div>
     </form>
   );
 };
