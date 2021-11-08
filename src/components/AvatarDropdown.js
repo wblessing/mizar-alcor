@@ -1,16 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
-import {
-  faCaretDown,
-  faSignOutAlt
-} from '@fortawesome/free-solid-svg-icons';
+import { faCaretDown, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import PropTypes from 'prop-types';
 
 const DropdownItem = ({ item }) => (
-  <button
-    className="text-gray-700 flex items-center"
-    onClick={item.onClick}
-  >
+  <button className="text-gray-700 flex items-center" onClick={item.onClick}>
     <FontAwesomeIcon icon={item.icon} />
     <p className="ml-2">{item.title}</p>
   </button>
@@ -39,12 +34,11 @@ const AvatarDropdown = () => {
     {
       title: 'Log Out',
       icon: faSignOutAlt,
-      onClick: () =>
-        logout({ returnTo: window.location.origin })
-    }
+      onClick: () => logout({ returnTo: window.location.origin }),
+    },
   ];
 
-  const handleClick = e => {
+  const handleClick = (e) => {
     if (!node.current.contains(e.target)) {
       setDropdownOpen(false);
     }
@@ -54,10 +48,7 @@ const AvatarDropdown = () => {
     document.addEventListener('mousedown', handleClick);
 
     return () => {
-      document.removeEventListener(
-        'mousedown',
-        handleClick
-      );
+      document.removeEventListener('mousedown', handleClick);
     };
   }, []);
 
@@ -88,6 +79,14 @@ const AvatarDropdown = () => {
       )}
     </div>
   );
+};
+
+DropdownItem.propTypes = {
+  item: PropTypes.object.isRequired,
+};
+
+DropdownContent.propTypes = {
+  dropdownItems: PropTypes.object.isRequired,
 };
 
 export default AvatarDropdown;

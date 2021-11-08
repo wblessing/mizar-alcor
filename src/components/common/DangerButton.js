@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const DangerButton = ({ text, onClick }) => (
   <button
@@ -8,5 +9,10 @@ const DangerButton = ({ text, onClick }) => (
     {text}
   </button>
 );
+
+DangerButton.propTypes = {
+  text: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
+};
 
 export default DangerButton;

@@ -4,13 +4,12 @@ import * as Yup from 'yup';
 import Label from './../components/common/Label';
 import FormInput from './../components/FormInput';
 import GradientButton from './common/GradientButton';
+import PropTypes from 'prop-types';
 
 const InventoryItemSchema = Yup.object().shape({
   name: Yup.string().required('Name is required'),
-  itemNumber: Yup.string().required(
-    'Item number is required'
-  ),
-  unitPrice: Yup.string().required('Unit price is required')
+  itemNumber: Yup.string().required('Item number is required'),
+  unitPrice: Yup.string().required('Unit price is required'),
 });
 
 const InventoryItemForm = ({ onSubmit }) => {
@@ -19,11 +18,9 @@ const InventoryItemForm = ({ onSubmit }) => {
       initialValues={{
         name: '',
         itemNumber: '',
-        unitPrice: ''
+        unitPrice: '',
       }}
-      onSubmit={(values, { resetForm }) =>
-        onSubmit(values, resetForm)
-      }
+      onSubmit={(values, { resetForm }) => onSubmit(values, resetForm)}
       validationSchema={InventoryItemSchema}
       validateOnBlur={false}
     >
@@ -73,6 +70,10 @@ const InventoryItemForm = ({ onSubmit }) => {
       )}
     </Formik>
   );
+};
+
+InventoryItemForm.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
 };
 
 export default InventoryItemForm;

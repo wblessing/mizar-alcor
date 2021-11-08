@@ -3,6 +3,7 @@ import GradientBar from './components/common/GradientBar';
 import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
 import Footer from './components/Footer';
+import PropTypes from 'prop-types';
 
 const AppShell = ({ children }) => {
   return (
@@ -16,14 +17,15 @@ const AppShell = ({ children }) => {
           <div className="p-4 border-b border-gray-200 bg-white">
             <Navbar />
           </div>
-          <div className="px-4 sm:px-8 py-2 bg-gray-100">
-            {children}
-          </div>
+          <div className="px-4 sm:px-8 py-2 bg-gray-100">{children}</div>
           <Footer />
         </div>
       </div>
     </>
   );
+};
+AppShell.propTypes = {
+  children: PropTypes.object.isRequired,
 };
 
 export default AppShell;

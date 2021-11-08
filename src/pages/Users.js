@@ -4,10 +4,12 @@ import Card from '../components/common/Card';
 import PageTitle from '../components/common/PageTitle';
 import { FetchContext } from '../context/FetchContext';
 import defaultAvatar from './../images/defaultAvatar.png';
+import PropTypes from 'prop-types';
 
 const UserDetailLabel = ({ text }) => (
   <p className="mt-2 uppercase font-bold text-gray-500 text-xs">{text}</p>
 );
+
 const UserDetail = ({ user }) => (
   <Card>
     <div className="flex">
@@ -66,6 +68,14 @@ const Users = () => {
       </div>
     </>
   );
+};
+
+UserDetail.propTypes = {
+  user: PropTypes.object.isRequired,
+};
+
+UserDetailLabel.propTypes = {
+  text: PropTypes.string.isRequired,
 };
 
 export default Users;

@@ -12,6 +12,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
 import { Link, useLocation } from 'react-router-dom';
 import logo from './../images/logo.png';
+import PropTypes from 'prop-types';
 
 const navItems = [
   {
@@ -94,6 +95,14 @@ const Sidebar = () => {
       </div>
     </section>
   );
+};
+
+NavItem.propTypes = {
+  navItem: PropTypes.object.isRequired,
+};
+
+NavItemContainer.propTypes = {
+  children: PropTypes.node.isRequired,
 };
 
 export default Sidebar;

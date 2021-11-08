@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
+import PropTypes from 'prop-types';
 
 const AuthStateItem = ({ title, value }) => (
   <div className="text-sm">
@@ -37,6 +38,11 @@ const AuthDebugger = () => {
       </div>
     </section>
   );
+};
+
+AuthStateItem.propTypes = {
+  title: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
 };
 
 export default AuthDebugger;

@@ -13,6 +13,7 @@ import AppShell from './AppShell';
 import Home from './pages/Home';
 import FourOFour from './pages/FourOFour';
 import logo from './images/logo.png';
+import PropTypes from 'prop-types';
 
 const Dashboard = lazy(() => import('./pages/Dashboard'));
 const Inventory = lazy(() => import('./pages/Inventory'));
@@ -165,5 +166,13 @@ function App() {
     </Auth0Provider>
   );
 }
+
+AdminRoute.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
+AuthenticatedRoute.propTypes = {
+  children: PropTypes.node.isRequired,
+};
 
 export default App;

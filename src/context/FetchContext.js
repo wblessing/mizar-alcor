@@ -1,6 +1,7 @@
 import React, { createContext, useEffect, useState, useCallback } from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 import axios from 'axios';
+import PropTypes from 'prop-types';
 
 const FetchContext = createContext();
 const { Provider } = FetchContext;
@@ -61,6 +62,10 @@ const FetchProvider = ({ children }) => {
       {children}
     </Provider>
   );
+};
+
+FetchProvider.propTypes = {
+  children: PropTypes.node.isRequired,
 };
 
 export { FetchContext, FetchProvider };

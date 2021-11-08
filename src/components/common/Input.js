@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Input = ({ ariaLabel, name, type, placeholder, field }) => (
   <input
@@ -10,5 +11,13 @@ const Input = ({ ariaLabel, name, type, placeholder, field }) => (
     placeholder={placeholder}
   />
 );
+
+Input.propTypes = {
+  ariaLabel: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  placeholder: PropTypes.string.isRequired,
+  field: PropTypes.string.isRequired,
+};
 
 export default Input;

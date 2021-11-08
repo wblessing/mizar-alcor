@@ -1,5 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import PropTypes from 'prop-types';
 
 const DashboardMetric = ({ title, value, icon }) => {
   return (
@@ -11,6 +12,12 @@ const DashboardMetric = ({ title, value, icon }) => {
       <p className="text-3xl text-blue-600 font-bold">{value}</p>
     </div>
   );
+};
+
+DashboardMetric.propTypes = {
+  title: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
+  icon: PropTypes.any.isRequired,
 };
 
 export default DashboardMetric;

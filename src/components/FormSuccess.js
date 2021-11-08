@@ -1,6 +1,7 @@
 import React from 'react';
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import PropTypes from 'prop-types';
 
 const FormSuccess = ({ text }) => (
   <section className="text-center p-2 mb-2 rounded border border-green-600 bg-green-100">
@@ -10,5 +11,9 @@ const FormSuccess = ({ text }) => (
     </p>
   </section>
 );
+
+FormSuccess.propTypes = {
+  text: PropTypes.string.isRequired,
+};
 
 export default FormSuccess;

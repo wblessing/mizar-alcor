@@ -6,6 +6,7 @@ import FormError from './../components/FormError';
 import FormSuccess from './../components/FormSuccess';
 import InventoryItemForm from './../components/InventoryItemForm';
 import { formatCurrency } from './../util';
+import PropTypes from 'prop-types';
 
 const InventoryItemContainer = ({ children }) => (
   <div className="bg-white rounded shadow-md mb-4 p-4">{children}</div>
@@ -115,6 +116,19 @@ const Inventory = () => {
         : 'No Inventory Items'}
     </>
   );
+};
+
+InventoryItem.propTypes = {
+  item: PropTypes.object.isRequired,
+  onDelete: PropTypes.func.isRequired,
+};
+
+InventoryItemContainer.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
+NewInventoryItem.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
 };
 
 export default Inventory;
