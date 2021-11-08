@@ -101,7 +101,7 @@ ManageCoursePage.propTypes = {
 };
 
 export function getCourseBySlug(courses, slug) {
-  return courses.find((course) => course.slug === slug) || null;
+  return courses.find((course) => course.title === slug) || null;
 }
 
 function mapStateToProps(state, ownProps) {

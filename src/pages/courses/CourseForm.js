@@ -51,14 +51,6 @@ const CourseForm = ({
       />
 
       <TextInput
-        name="slug"
-        label="Slug"
-        value={course.slug}
-        onChange={onChange}
-        error={errors.slug}
-      />
-
-      <TextInput
         name="category"
         label="Category"
         value={course.category}
