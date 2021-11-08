@@ -4,9 +4,12 @@
   functions = "functions"
     
 [[redirects]]
-    from = "/api/*"
-    to= "/.netlify/functions/:splat"
-    status = 200
+  from = "/*"
+  to = "/dashboard"
+  status = 200
+  force = false
+  query = {path = ":path"} # apply this rule for /?path=example
+  conditions = {Role = ["admin", user]}
 
 [[redirects]]
   from = "/get-authors"
