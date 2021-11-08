@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useHistory, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { loadCourses, saveCourse } from '../../redux/actions/courseActions';
-import { loadAuthors } from '../../redux/actions/authorActions';
+import { saveCourse } from '../../redux/actions/courseActions';
 import PropTypes from 'prop-types';
 import CourseForm from './CourseForm';
 import { newCourse } from '../../tools/mockData';
