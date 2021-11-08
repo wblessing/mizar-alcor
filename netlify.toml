@@ -9,7 +9,7 @@
   status = 200
   force = false
   query = {path = ":path"} 
-  conditions = {Role = ["admin", user]}
+  conditions = {Role = ["admin", "user"]}
 
 [[redirects]]
   from = "/get-authors"
