@@ -8,6 +8,10 @@ import logo from './../images/logo.png';
 const HomeView = () => {
   const { isAuthenticated, loginWithRedirect } = useAuth0();
 
+  const onClick = async () => {
+    window.open('https://github.com/wblessing/mizar-alcor', '_blank');
+  };
+
   return (
     <>
       <GradientBar />
@@ -48,6 +52,9 @@ const HomeView = () => {
                   text="Get Started"
                 />
               )}
+            </div>
+            <div className="mt-4">
+              <GradientButton onClick={onClick} text="Github Source" />
             </div>
           </div>
         </div>
