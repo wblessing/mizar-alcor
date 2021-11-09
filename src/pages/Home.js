@@ -34,10 +34,10 @@ const HomeView = () => {
         <div className="absolute left-0 top-0 mt-32 lg:mt-48 px-12 nato-sans">
           <div className="w-full lg:w-2/3">
             <h1 className="text-gray-200 text-2xl lg:text-6xl sm:text-5xl font-bold leading-tight">
-              React Redux and Axios
+              React Redux Axios and Security
             </h1>
             <h2 className="text-gray-400 text-md sm:text-2xl sm:mt-10 mt-4">
-              Auth0, Netlify, Mongo, and Webpack
+              Netlify, Auth0, Mongo and Webpack
             </h2>
             <div className="mt-4 sm:mt-10 w-48">
               {isAuthenticated ? (
