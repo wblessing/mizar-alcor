@@ -37,7 +37,7 @@ const HomeView = () => {
               React Redux and Axios
             </h1>
             <h2 className="text-gray-400 text-md sm:text-2xl sm:mt-10 mt-4">
-              Includes Auth0, Netlify, Mongo, and Airtable
+              Auth0, Netlify, Mongo, and Webpack
             </h2>
             <div className="mt-4 sm:mt-10 w-48">
               {isAuthenticated ? (
