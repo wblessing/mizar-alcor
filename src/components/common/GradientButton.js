@@ -24,11 +24,11 @@ const GradientButton = ({ type, text, size, loading, onClick }) => {
 };
 
 GradientButton.propTypes = {
-  type: PropTypes.string.isRequired,
-  text: PropTypes.string.isRequired,
-  size: PropTypes.string.isRequired,
-  loading: PropTypes.func.isRequired,
-  onClick: PropTypes.func.isRequired,
+  type: PropTypes.string,
+  text: PropTypes.string,
+  size: PropTypes.string,
+  loading: PropTypes.func,
+  onClick: PropTypes.func,
 };
 
 export default GradientButton;

@@ -4,11 +4,9 @@
   "private": true,
   "scripts": {
     "debug": "netlify dev --inspect",
-    "start": "run-p start:dev start:api",
+    "start": "run-p start:dev",
     "start:dev": "react-scripts start",
     "-start:dev": "webpack serve --config webpack.config.dev.js",
-    "prestart:api": "node src/tools/createMockDb.js",
-    "start:api": "node src/tools/apiServer.js",
     "test": "jest --watch",
     "test:ci": "jest",
     "clean:build": "rimraf ./build && mkdir build",
