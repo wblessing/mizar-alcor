@@ -40,16 +40,6 @@ const HomeView = () => {
             <h2 className="text-gray-400 text-md sm:text-2xl sm:mt-10 mt-4">
               Netlify, Auth0, Mongo and Webpack
             </h2>
-            <div className="mt-4 sm:mt-10 w-48">
-              {isAuthenticated ? (
-                <GradientLink to="/dashboard" text="Go to Dashboard" />
-              ) : (
-                <GradientButton
-                  onClick={loginWithRedirect}
-                  text="Get Started"
-                />
-              )}
-            </div>
             <div className="mt-4">
               <GradientButton onClick={onClick} text="Github Source" />
             </div>

@@ -7,10 +7,10 @@ const CourseList = ({ courses, onDeleteClick }) => (
   <table className="table">
     <thead>
       <tr>
-        <th />
         <th>Title</th>
         <th>Author</th>
         <th>Category</th>
+        <th />
         <th />
       </tr>
     </thead>
@@ -19,15 +19,15 @@ const CourseList = ({ courses, onDeleteClick }) => (
         return (
           <tr key={course.title}>
             <td>
-              <a className="btn btn-light" href={course.url}>
-                Watch
-              </a>
-            </td>
-            <td>
               <Link to={'/course/' + course.title}>{course.title}</Link>
             </td>
             <td>{course.authorName}</td>
             <td>{course.category}</td>
+            <td>
+              <a className="btn btn-light" href={course.url}>
+                Watch
+              </a>
+            </td>
             <td>
               <DangerButton
                 text="Delete"
