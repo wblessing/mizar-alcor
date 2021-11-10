@@ -32,6 +32,10 @@ class CoursesPage extends React.Component {
     }
   }
 
+  handleWatchCourse = async (course) => {
+    window.open(course.url, '_blank');
+  };
+
   handleDeleteCourse = async (course) => {
     toast.success('Course deleted');
     try {
@@ -51,6 +55,7 @@ class CoursesPage extends React.Component {
         ) : (
           <>
             <CourseList
+              onWatchClick={this.handleWatchCourse}
               onDeleteClick={this.handleDeleteCourse}
               courses={this.props.courses}
             />
@@ -60,7 +65,7 @@ class CoursesPage extends React.Component {
                 text="Add Course"
                 onClick={() => this.setState({ redirectToAddCoursePage: true })}
               />
-            </div>{' '}
+            </div>
           </>
         )}
       </>
