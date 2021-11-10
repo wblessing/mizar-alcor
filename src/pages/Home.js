@@ -4,6 +4,7 @@ import GradientLink from '../components/common/GradientLink';
 import GradientButton from '../components/common/GradientButton';
 import GradientBar from './../components/common/GradientBar';
 import logo from './../images/logo.png';
+import skyImage from './../images/phil-botha-a0TJ3hy-UD8-unsplash.jpg';
 
 const HomeView = () => {
   const { isAuthenticated, loginWithRedirect } = useAuth0();
@@ -29,11 +30,7 @@ const HomeView = () => {
       </div>
       <div className="h-full bg-blue-900">
         <div className="opacity-10">
-          <img
-            className="object-fill w-full"
-            src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9"
-            alt="Home"
-          />
+          <img src={skyImage} alt="Home" />
         </div>
         <div className="absolute left-0 top-0 mt-32 lg:mt-48 px-12 nato-sans">
           <div className="w-full lg:w-2/3">
