@@ -4,7 +4,7 @@ import GradientLink from '../components/common/GradientLink';
 import GradientButton from '../components/common/GradientButton';
 import GradientBar from './../components/common/GradientBar';
 import logo from './../images/logo.png';
-import skyImage from './../images/phil-botha-a0TJ3hy-UD8-unsplash.jpg';
+import skyImage from './../images/phil-botha-unsplash.jpg';
 
 const HomeView = () => {
   const { isAuthenticated, loginWithRedirect } = useAuth0();
