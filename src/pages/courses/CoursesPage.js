@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import CourseList from './CourseList';
 import { Redirect } from 'react-router-dom';
-import Spinner from './common/Spinner';
+import Spinner from '../../components/common/Spinner';
 import { toast } from 'react-toastify';
 //import 'bootstrap/dist/css/bootstrap.min.css';
 import PageTitle from '../../components/common/PageTitle';

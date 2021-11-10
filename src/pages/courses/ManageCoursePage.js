@@ -5,7 +5,7 @@ import { saveCourse } from '../../redux/actions/courseActions';
 import PropTypes from 'prop-types';
 import CourseForm from './CourseForm';
 import { newCourse } from '../../tools/mockData';
-import Spinner from './common/Spinner';
+import Spinner from '../../components/common/Spinner';
 import { toast } from 'react-toastify';
 
 export function ManageCoursePage({
