@@ -49,7 +49,7 @@ class CoursesPage extends React.Component {
     return (
       <>
         {this.state.redirectToAddCoursePage && <Redirect to="course" />}
-        <PageTitle title="Video Courses" />
+        <PageTitle title="Courses" />
         {this.props.loading ? (
           <Spinner />
         ) : (
