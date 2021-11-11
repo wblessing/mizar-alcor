@@ -1,7 +1,7 @@
 import React from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
 import GradientLink from '../components/common/GradientLink';
-import GradientButton from '../components/common/GradientButton';
+import GradientButton from '../components/common/buttons/GradientButton';
 import GradientBar from './../components/common/GradientBar';
 import logo from './../images/logo.png';
 import skyImage from './../images/phil-botha-unsplash.jpg';

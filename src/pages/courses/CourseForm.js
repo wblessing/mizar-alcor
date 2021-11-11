@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import TextInputBoot from '../../components/common/TextInputBoot';
 import SelectInput from '../../components/common/SelectInputBoot';
 import PageTitle from '../../components/common/PageTitle';
-import GradientButton from '../../components/common/GradientButton';
+import GradientButton from '../../components/common/buttons/GradientButton';
 
 const CourseForm = ({
   course,

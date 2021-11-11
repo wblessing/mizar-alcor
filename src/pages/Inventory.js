@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import PageTitle from '../components/common/PageTitle';
 import { FetchContext } from '../context/FetchContext';
-import DangerButton from './../components/common/DangerButton';
+import DangerButton from './../components/common/buttons/DangerButton';
 import FormError from './../components/FormError';
 import FormSuccess from './../components/FormSuccess';
 import InventoryItemForm from './../components/InventoryItemForm';

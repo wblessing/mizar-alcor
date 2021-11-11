@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Field, Form, Formik } from 'formik';
-import GradientButton from '../components/common/GradientButton';
+import GradientButton from '../components/common/buttons/GradientButton';
 import PageTitle from '../components/common/PageTitle';
 import Card from './../components/common/Card';
 import FormError from './../components/FormError';

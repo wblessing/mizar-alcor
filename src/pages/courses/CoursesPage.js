@@ -10,7 +10,7 @@ import Spinner from '../../components/common/Spinner';
 import { toast } from 'react-toastify';
 //import 'bootstrap/dist/css/bootstrap.min.css';
 import PageTitle from '../../components/common/PageTitle';
-import GradientButton from '../../components/common/GradientButton';
+import GradientButton from '../../components/common/buttons/GradientButton';
 
 class CoursesPage extends React.Component {
   state = {

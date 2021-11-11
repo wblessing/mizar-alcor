@@ -3,7 +3,7 @@ import { Form, Formik } from 'formik';
 import * as Yup from 'yup';
 import Label from './../components/common/Label';
 import FormInput from './../components/FormInput';
-import GradientButton from './common/GradientButton';
+import GradientButton from './common/buttons/GradientButton';
 import PropTypes from 'prop-types';
 
 const InventoryItemSchema = Yup.object().shape({

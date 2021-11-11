@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import DangerButton from '../../components/common/DangerButton';
-import StandardButton from '../../components/common/StandardButton';
+import DangerButton from '../../components/common/buttons/DangerButton';
+import StandardButton from '../../components/common/buttons/StandardButton';
 
 const CourseList = ({ courses, onDeleteClick, onWatchClick }) => {
   return (
