@@ -9,8 +9,7 @@
     "test:ci": "jest",
     "clean:build": "rimraf ./build && mkdir build",
     "prebuild": "run-p clean:build",
-    "build": "webpack --config webpack.config.prod.js",
-    "eject": "react-scripts eject"
+    "build": "webpack --config webpack.config.prod.js"
   },
   "jest": {
     "setupFiles": [

@@ -3,14 +3,14 @@ import { useAuth0 } from '@auth0/auth0-react';
 import GradientLink from '../components/common/GradientLink';
 import GradientButton from '../components/common/buttons/GradientButton';
 import GradientBar from './../components/common/GradientBar';
+import skyImage from './../images/botha-unsplash.jpg';
 import logo from './../images/logo.png';
-import skyImage from './../images/phil-botha-unsplash.jpg';
 
 const HomeView = () => {
   const { isAuthenticated, loginWithRedirect } = useAuth0();
 
   const onClick = async () => {
-    window.open('https://github.com/wblessing/mizar-alcor', '_blank');
+    window.open('https://github.com/wblessing/mizar-alcor', 'github-source');
   };
 
   return (
@@ -29,7 +29,7 @@ const HomeView = () => {
         </div>
       </div>
       <div className="h-full bg-blue-900">
-        <div className="opacity-10">
+        <div>
           <img src={skyImage} alt="Home" />
         </div>
         <div className="absolute left-0 top-0 mt-32 lg:mt-48 px-12 nato-sans">
@@ -38,7 +38,7 @@ const HomeView = () => {
               React Redux Axios and Security
             </h1>
             <h2 className="text-gray-400 text-md sm:text-2xl sm:mt-10 mt-4">
-              Netlify, Auth0, Mongo and Webpack
+              Netlify, Auth0, Mongo, Webpack and Jest
             </h2>
             <div className="mt-4">
               <GradientButton onClick={onClick} text="Github Source" />
