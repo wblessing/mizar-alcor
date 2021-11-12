@@ -29,16 +29,25 @@ const LoadingFallback = () => (
   </AppShell>
 );
 
-const UnauthenticatedRoutes = () => (
-  <Switch>
-    <Route exact path="/">
-      <Home />
-    </Route>
-    <Route path="*">
-      <FourOFour />
-    </Route>
-  </Switch>
-);
+const UnauthenticatedRoutes = ({ children, ...rest }) => {
+  const { isAuthenticated } = useAuth0();
+  return (
+    <Switch>
+      <Route exact path="/">
+        {!isAuthenticated ? (
+          <Home />
+        ) : (
+          <AppShell>
+            <Dashboard />
+          </AppShell>
+        )}
+      </Route>
+      <Route path="*">
+        <FourOFour />
+      </Route>
+    </Switch>
+  );
+};
 
 const AuthenticatedRoute = ({ children, ...rest }) => {
   const { isAuthenticated } = useAuth0();
@@ -101,6 +110,7 @@ const AppRoutes = () => {
       </div>
     );
   }
+
   return (
     <>
       <Suspense fallback={<LoadingFallback />}>
