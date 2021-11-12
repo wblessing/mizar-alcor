@@ -1,4 +1,9 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is based on several excellent courses presented by
+
+- [Ryan Chenkie](https://github.com/chenkie)
+- [Cory House](https://github.com/coryhouse)
+
+Thanks!
 
 ## Available Scripts
 
