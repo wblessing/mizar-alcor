@@ -18,7 +18,9 @@ const Dashboard = () => {
   useEffect(() => {
     const getDashboardData = async () => {
       try {
-        const { data } = await fetchContext.authAxios.get('get-dashboard-data');
+        const { data } = await fetchContext.authAxios.get(
+          'api/get-dashboard-data'
+        );
         setDashboardData(data);
       } catch (err) {
         console.log(err);

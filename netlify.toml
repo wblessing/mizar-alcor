@@ -4,6 +4,11 @@
   functions = "functions"
 
 [[redirects]]
+    from = "/api/*"
+    to= "/.netlify/functions/:splat"
+    status = 200
+
+[[redirects]]
   from = "/get-authors"
   to = "/.netlify/functions/get-authors"
   status = 200
@@ -36,11 +41,6 @@
 [[redirects]]
   from = "/delete-inventory-item/*"
   to = "/.netlify/functions/delete-inventory-item/:splat"
-  status = 200
-
-[[redirects]]
-  from = "/get-dashboard-data"
-  to = "/.netlify/functions/get-dashboard-data"
   status = 200
 
 [[redirects]]
