@@ -46,7 +46,7 @@ const Users = () => {
   useEffect(() => {
     const getUsers = async () => {
       try {
-        const { data } = await fetchContext.authAxios.get('get-users');
+        const { data } = await fetchContext.authAxios.get('api/get-users');
         setUsers(data.users);
       } catch (err) {
         console.log(err);

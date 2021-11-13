@@ -10,9 +10,12 @@ const Account = () => {
 
   const setUserRole = async (role) => {
     try {
-      const { data } = await fetchContext.authAxios.patch('update-user-role', {
-        role,
-      });
+      const { data } = await fetchContext.authAxios.patch(
+        'api/update-user-role',
+        {
+          role,
+        }
+      );
       setSuccessMessage(data.message);
     } catch (err) {
       setErrorMessage(err.response.data.message);

@@ -55,7 +55,7 @@ const Inventory = () => {
     const getInventory = async () => {
       try {
         const { data } = await fetchContext.authAxios.get(
-          'get-inventory-items'
+          'api/get-inventory-items'
         );
         setInventory(data);
       } catch (err) {
@@ -69,7 +69,7 @@ const Inventory = () => {
   const onSubmit = async (values, resetForm) => {
     try {
       const { data } = await fetchContext.authAxios.post(
-        'create-inventory-item',
+        'api/create-inventory-item',
         values
       );
       setInventory([...inventory, data.inventoryItem]);
@@ -87,7 +87,7 @@ const Inventory = () => {
     try {
       if (window.confirm('Are you sure you want to delete this item?')) {
         const { data } = await fetchContext.authAxios.delete(
-          `delete-inventory-item/${item._id}`
+          `api/delete-inventory-item/${item._id}`
         );
         setInventory(
           inventory.filter((item) => item._id !== data.deletedItem._id)

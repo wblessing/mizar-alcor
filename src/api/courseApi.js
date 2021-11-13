@@ -1,7 +1,7 @@
 import { handleResponse, handleError } from './apiUtils';
 
 export function getCourses(accessToken) {
-  return fetch('/get-courses/', {
+  return fetch('/api/get-courses/', {
     headers: { Authorization: `Bearer ${accessToken}` },
   })
     .then(handleResponse)
@@ -9,9 +9,9 @@ export function getCourses(accessToken) {
 }
 
 export function saveCourse(course, accessToken) {
-  let baseUrl = '/create-course/';
+  let baseUrl = '/api/create-course/';
   if (course.id) {
-    baseUrl = '/update-course/';
+    baseUrl = '/api/update-course/';
   }
 
   return fetch(baseUrl + (course.id || ''), {
@@ -27,7 +27,7 @@ export function saveCourse(course, accessToken) {
 }
 
 export function deleteCourse(course, accessToken) {
-  return fetch('/delete-course/', {
+  return fetch('/api/delete-course/', {
     method: 'DELETE',
     body: JSON.stringify({ id: course.id }),
     headers: {

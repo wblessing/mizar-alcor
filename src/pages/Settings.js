@@ -16,7 +16,7 @@ const Settings = () => {
   useEffect(() => {
     const getBio = async () => {
       try {
-        const { data } = await fetchContext.authAxios.get('get-user-bio');
+        const { data } = await fetchContext.authAxios.get('api/get-user-bio');
         setBio(data.bio);
       } catch (err) {
         console.log(err);
@@ -28,7 +28,7 @@ const Settings = () => {
   const saveBio = async (bio) => {
     try {
       const { data } = await fetchContext.authAxios.patch(
-        'update-user-bio',
+        'api/update-user-bio',
         bio
       );
       setErrorMessage(null);
