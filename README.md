@@ -1,4 +1,4 @@
-Preview this repository at [https://jwblessing.io](https://jwblessing.io){:target="_blank"}
+Preview this repository at [https://jwblessing.io](https://jwblessing.io)
 
 This project is based on several excellent courses presented by:
 
