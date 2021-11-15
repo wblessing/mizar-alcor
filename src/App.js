@@ -14,6 +14,8 @@ import Home from './pages/Home';
 import FourOFour from './pages/FourOFour';
 import logo from './images/logo.png';
 import PropTypes from 'prop-types';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Dashboard = lazy(() => import('./pages/Dashboard'));
 const Inventory = lazy(() => import('./pages/Inventory'));
@@ -142,6 +144,7 @@ const AppRoutes = () => {
           <UnauthenticatedRoutes />
         </Switch>
       </Suspense>
+      <ToastContainer autoClose={3000} hideProgressBar />
     </>
   );
 };
