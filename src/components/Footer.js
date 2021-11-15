@@ -8,13 +8,11 @@ const Footer = () => {
   const paren2 = '\u{2475}';
   return (
     <footer className="p-6">
-      <p>
-        {' '}
+      <p style={{ color: 'green' }}>
         {paren1 +
           ' Serverless functions with bearer token validation and Mongo.'}
       </p>
-      <p>
-        {' '}
+      <p style={{ color: 'green' }}>
         {paren2 +
           ' Serverless functions with Redux, bearer token validation and Airtable'}
       </p>
