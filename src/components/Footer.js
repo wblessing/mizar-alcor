@@ -10,12 +10,13 @@ const Footer = () => {
     <footer className="p-6">
       <p>
         {' '}
-        {paren1 + ' Netlify functions with bearer token validation and Mongo.'}
+        {paren1 +
+          ' Serverless functions with bearer token validation and Mongo.'}
       </p>
       <p>
         {' '}
         {paren2 +
-          ' Netlify functions with Redux, bearer token validation and Airtable'}
+          ' Serverless functions with Redux, bearer token validation and Airtable'}
       </p>
       <br />
 
