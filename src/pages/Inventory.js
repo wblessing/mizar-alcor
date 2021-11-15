@@ -87,7 +87,7 @@ const Inventory = () => {
     try {
       if (window.confirm('Are you sure you want to delete this item?')) {
         const { data } = await fetchContext.authAxios.delete(
-          `delete-inventory-item/${item._id}`
+          `api/delete-inventory-item/${item._id}`
         );
         setInventory(
           inventory.filter((item) => item._id !== data.deletedItem._id)
@@ -97,6 +97,7 @@ const Inventory = () => {
       }
     } catch (err) {
       const { data } = err.response;
+      setSuccessMessage(null);
       setErrorMessage(data.message);
     }
   };
