@@ -14,6 +14,9 @@ import { Link, useLocation } from 'react-router-dom';
 import logo from './../images/logo.png';
 import PropTypes from 'prop-types';
 
+const paren1 = '\u{2474}';
+const paren2 = '\u{2475}';
+
 const navItems = [
   {
     label: 'Dashboard',
@@ -22,31 +25,31 @@ const navItems = [
     allowedRoles: ['user', 'admin'],
   },
   {
-    label: 'Inventory',
+    label: 'Inventory' + paren1,
     path: '/inventory',
     icon: faChartPie,
     allowedRoles: ['admin'],
   },
   {
-    label: 'Courses',
+    label: 'Courses' + paren2,
     path: '/courses',
     icon: faAward,
     allowedRoles: ['user', 'admin'],
   },
   {
-    label: 'Account',
+    label: 'Account' + paren1,
     path: '/account',
     icon: faAddressCard,
     allowedRoles: ['user', 'admin'],
   },
   {
-    label: 'Settings',
+    label: 'Settings' + paren1,
     path: '/settings',
     icon: faCogs,
     allowedRoles: ['user', 'admin'],
   },
   {
-    label: 'Users',
+    label: 'Users' + paren1,
     path: '/users',
     icon: faDoorOpen,
     allowedRoles: ['admin'],
