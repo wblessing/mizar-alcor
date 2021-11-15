@@ -26,8 +26,7 @@ exports.handler = requireAuth(async (event, context, callback) => {
     return callback(null, {
       statusCode: 200,
       body: JSON.stringify({
-        message:
-          'User role updated. You must log in again for the changes to take effect.',
+        message: 'User role updated. Sorry this is not working yet.',
       }),
     });
   } catch (err) {
