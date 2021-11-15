@@ -92,6 +92,8 @@ const Inventory = () => {
         setInventory(
           inventory.filter((item) => item._id !== data.deletedItem._id)
         );
+        setSuccessMessage(data.message);
+        setErrorMessage(null);
       }
     } catch (err) {
       const { data } = err.response;
