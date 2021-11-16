@@ -142,6 +142,9 @@ const AppRoutes = () => {
             <Users />
           </AuthenticatedRoute>
           <UnauthenticatedRoutes />
+          <Route path="*">
+            <FourOFour />
+          </Route>
         </Switch>
       </Suspense>
       <ToastContainer autoClose={3000} hideProgressBar />
