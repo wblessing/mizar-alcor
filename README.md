@@ -8,5 +8,4 @@ The project is based on several excellent courses presented by:
 Thanks!
 <br />
 Bill
-
-[linkedin](www.linkedin.com/in/wblessing)
+[linkedin](https://www.linkedin.com/in/wblessing)
