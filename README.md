@@ -9,4 +9,4 @@ Thanks!
 <br />
 Bill
 <br />
-[linkedin](https://www.linkedin.com/in/wblessing)
+[Linkedin](https://www.linkedin.com/in/wblessing)
