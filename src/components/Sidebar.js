@@ -22,7 +22,7 @@ const navItems = [
     label: 'Dashboard',
     path: '/dashboard',
     icon: faChartLine,
-    allowedRoles: ['user', 'admin'],
+    allowedRoles: ['user'],
   },
   {
     label: 'Inventory' + paren1,
@@ -40,13 +40,13 @@ const navItems = [
     label: 'Account' + paren1,
     path: '/account',
     icon: faAddressCard,
-    allowedRoles: ['user', 'admin'],
+    allowedRoles: ['user'],
   },
   {
     label: 'Settings' + paren1,
     path: '/settings',
     icon: faCogs,
-    allowedRoles: ['user', 'admin'],
+    allowedRoles: ['admin'],
   },
   {
     label: 'Users' + paren1,
@@ -82,6 +82,9 @@ const NavItemContainer = ({ children }) => <div>{children}</div>;
 const Sidebar = () => {
   const { user } = useAuth0();
   const roles = user[`${process.env.REACT_APP_JWT_NAMESPACE}/roles`];
+  if (roles.length === 0) {
+    roles[0] = 'user';
+  }
   return (
     <section className="h-screen">
       <div className="w-16 sm:w-24 m-auto">
@@ -90,9 +93,10 @@ const Sidebar = () => {
       <div className="mt-20">
         {navItems.map((navItem, i) => (
           <NavItemContainer key={i}>
-            {navItem.allowedRoles.includes(roles[0]) && (
-              <NavItem navItem={navItem} />
-            )}
+            {navItem.allowedRoles.length === 0 ||
+              (navItem.allowedRoles.includes(roles[0]) && (
+                <NavItem navItem={navItem} />
+              ))}
           </NavItemContainer>
         ))}
       </div>
