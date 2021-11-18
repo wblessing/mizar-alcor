@@ -7,7 +7,6 @@ The project is based on several excellent courses presented by:
 
 ![Alt text](courses-page.jpg)
 <br />
-<br />
 
 Thanks!
 <br />
