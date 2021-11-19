@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import TextInputBoot from '../../components/common/TextInputBoot';
+import TextInput from '../../components/common/TextInput';
 import SelectInput from '../../components/common/SelectInput';
 import PageTitle from '../../components/common/PageTitle';
 import GradientButton from '../../components/common/buttons/GradientButton';
@@ -22,7 +22,7 @@ const CourseForm = ({
             {errors.onSave}
           </div>
         )}
-        <TextInputBoot
+        <TextInput
           name="title"
           label="Title"
           value={course.title}
@@ -43,7 +43,7 @@ const CourseForm = ({
           error={errors.author}
         />
 
-        <TextInputBoot
+        <TextInput
           name="url"
           label="Url"
           value={course.url}
@@ -51,7 +51,7 @@ const CourseForm = ({
           error={errors.url}
         />
 
-        <TextInputBoot
+        <TextInput
           name="category"
           label="Category"
           value={course.category}
