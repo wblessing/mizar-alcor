@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const SelectInputBoot = ({
+const SelectInput = ({
   name,
   label,
   onChange,
@@ -11,19 +11,11 @@ const SelectInputBoot = ({
   options,
 }) => {
   return (
-    <div className="form-group">
+    <div>
       <label htmlFor={name}>{label}</label>
-      <div className="field">
+      <div>
         {/* Note, value is set here rather than on the option - docs: https://facebook.github.io/react/docs/forms.html */}
-        <select
-          name={name}
-          value={value}
-          onChange={onChange}
-          className="appearance-none rounded-none relative block w-full px-3
-            py-2 border border-gray-300 placeholder-gray-500 text-gray-900
-            rounded-md focus:outline-none focus:shadow-outline-blue
-            focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5"
-        >
+        <select name={name} value={value} onChange={onChange}>
           <option value="">{defaultOption}</option>
           {options.map((option) => {
             return (
@@ -39,7 +31,7 @@ const SelectInputBoot = ({
   );
 };
 
-SelectInputBoot.propTypes = {
+SelectInput.propTypes = {
   name: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
@@ -49,4 +41,4 @@ SelectInputBoot.propTypes = {
   options: PropTypes.arrayOf(PropTypes.object),
 };
 
-export default SelectInputBoot;
+export default SelectInput;

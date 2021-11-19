@@ -52,7 +52,7 @@ const DashboardChart = ({ salesData }) => {
 };
 
 DashboardChart.propTypes = {
-  salesData: PropTypes.object.isRequired,
+  salesData: PropTypes.array.isRequired,
 };
 
 export default DashboardChart;

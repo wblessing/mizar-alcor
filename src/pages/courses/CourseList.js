@@ -3,10 +3,11 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import DangerButton from '../../components/common/buttons/DangerButton';
 import StandardButton from '../../components/common/buttons/StandardButton';
+import * as classnames from '../../components/common/classnames';
 
 const CourseList = ({ courses, onDeleteClick, onWatchClick }) => {
   return (
-    <section className="bg-white p-4 shadow-md rounded-md">
+    <section className={classnames.FORM_BORDER}>
       <table style={{ width: 770 }}>
         <thead>
           <tr>

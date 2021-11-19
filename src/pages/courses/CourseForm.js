@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import TextInputBoot from '../../components/common/TextInputBoot';
-import SelectInput from '../../components/common/SelectInputBoot';
+import TextInput from '../../components/common/TextInput';
+import SelectInput from '../../components/common/SelectInput';
 import PageTitle from '../../components/common/PageTitle';
 import GradientButton from '../../components/common/buttons/GradientButton';
+import * as classnames from '../../components/common/classnames';
 
 const CourseForm = ({
   course,
@@ -14,7 +15,7 @@ const CourseForm = ({
   errors = {},
 }) => {
   return (
-    <section className="bg-white p-4 shadow-md rounded-md">
+    <section className={classnames.FORM_BORDER}>
       <form onSubmit={onSave}>
         <PageTitle title={course.id ? 'Edit Course' : 'Add Course'} />
         {errors.onSave && (
@@ -22,7 +23,7 @@ const CourseForm = ({
             {errors.onSave}
           </div>
         )}
-        <TextInputBoot
+        <TextInput
           name="title"
           label="Title"
           value={course.title}
@@ -43,7 +44,7 @@ const CourseForm = ({
           error={errors.author}
         />
 
-        <TextInputBoot
+        <TextInput
           name="url"
           label="Url"
           value={course.url}
@@ -51,7 +52,7 @@ const CourseForm = ({
           error={errors.url}
         />
 
-        <TextInputBoot
+        <TextInput
           name="category"
           label="Category"
           value={course.category}

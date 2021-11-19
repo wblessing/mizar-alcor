@@ -16,7 +16,7 @@ const DashboardMetric = ({ title, value, icon }) => {
 
 DashboardMetric.propTypes = {
   title: PropTypes.string.isRequired,
-  value: PropTypes.number.isRequired,
+  value: PropTypes.any.isRequired,
   icon: PropTypes.any.isRequired,
 };
 
