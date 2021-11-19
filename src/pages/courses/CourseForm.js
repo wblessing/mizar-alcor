@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import TextInputBoot from '../../components/common/TextInputBoot';
-import SelectInput from '../../components/common/SelectInputBoot';
+import SelectInput from '../../components/common/SelectInput';
 import PageTitle from '../../components/common/PageTitle';
 import GradientButton from '../../components/common/buttons/GradientButton';
 

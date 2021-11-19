@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
-//import 'bootstrap/dist/css/bootstrap.min.css';
 import configureStore from './redux/configureStore';
 import './tailwind.css';
 import './styles.css';
