@@ -24,11 +24,12 @@ exports[`sets submit button label 'Save' when saving is false 1`] = `
       >
         Title
       </label>
-      <div
-        className="field"
-      >
+      <div>
         <input
-          className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5"
+          className="appearance-none rounded-none relative block w-full px-3
+            py-2 border border-gray-300 placeholder-gray-500 text-gray-900
+            rounded-md focus:outline-n=i9u[-;'e focus:shadow-outline-blue
+            focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5"
           name="title"
           onChange={[MockFunction]}
           type="text"
@@ -36,19 +37,14 @@ exports[`sets submit button label 'Save' when saving is false 1`] = `
         />
       </div>
     </div>
-    <div
-      className="form-group"
-    >
+    <div>
       <label
         htmlFor="authorId"
       >
         Author
       </label>
-      <div
-        className="field"
-      >
+      <div>
         <select
-          className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5"
           name="authorId"
           onChange={[MockFunction]}
           value={1}
@@ -84,11 +80,12 @@ exports[`sets submit button label 'Save' when saving is false 1`] = `
       >
         Url
       </label>
-      <div
-        className="field"
-      >
+      <div>
         <input
-          className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5"
+          className="appearance-none rounded-none relative block w-full px-3
+            py-2 border border-gray-300 placeholder-gray-500 text-gray-900
+            rounded-md focus:outline-n=i9u[-;'e focus:shadow-outline-blue
+            focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5"
           name="url"
           onChange={[MockFunction]}
           type="text"
@@ -104,11 +101,12 @@ exports[`sets submit button label 'Save' when saving is false 1`] = `
       >
         Category
       </label>
-      <div
-        className="field"
-      >
+      <div>
         <input
-          className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5"
+          className="appearance-none rounded-none relative block w-full px-3
+            py-2 border border-gray-300 placeholder-gray-500 text-gray-900
+            rounded-md focus:outline-n=i9u[-;'e focus:shadow-outline-blue
+            focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5"
           name="category"
           onChange={[MockFunction]}
           type="text"
@@ -156,11 +154,12 @@ exports[`sets submit button label 'Saving...' when saving is true 1`] = `
       >
         Title
       </label>
-      <div
-        className="field"
-      >
+      <div>
         <input
-          className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5"
+          className="appearance-none rounded-none relative block w-full px-3
+            py-2 border border-gray-300 placeholder-gray-500 text-gray-900
+            rounded-md focus:outline-n=i9u[-;'e focus:shadow-outline-blue
+            focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5"
           name="title"
           onChange={[MockFunction]}
           type="text"
@@ -168,19 +167,14 @@ exports[`sets submit button label 'Saving...' when saving is true 1`] = `
         />
       </div>
     </div>
-    <div
-      className="form-group"
-    >
+    <div>
       <label
         htmlFor="authorId"
       >
         Author
       </label>
-      <div
-        className="field"
-      >
+      <div>
         <select
-          className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5"
           name="authorId"
           onChange={[MockFunction]}
           value={1}
@@ -216,11 +210,12 @@ exports[`sets submit button label 'Saving...' when saving is true 1`] = `
       >
         Url
       </label>
-      <div
-        className="field"
-      >
+      <div>
         <input
-          className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5"
+          className="appearance-none rounded-none relative block w-full px-3
+            py-2 border border-gray-300 placeholder-gray-500 text-gray-900
+            rounded-md focus:outline-n=i9u[-;'e focus:shadow-outline-blue
+            focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5"
           name="url"
           onChange={[MockFunction]}
           type="text"
@@ -236,11 +231,12 @@ exports[`sets submit button label 'Saving...' when saving is true 1`] = `
       >
         Category
       </label>
-      <div
-        className="field"
-      >
+      <div>
         <input
-          className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5"
+          className="appearance-none rounded-none relative block w-full px-3
+            py-2 border border-gray-300 placeholder-gray-500 text-gray-900
+            rounded-md focus:outline-n=i9u[-;'e focus:shadow-outline-blue
+            focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5"
           name="category"
           onChange={[MockFunction]}
           type="text"
