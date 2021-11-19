@@ -9,7 +9,9 @@ The project is based on several excellent courses presented by:
 
 <br />
 Thanks!
+<br />
 Bill
 <br />
+
 ![Alt text](docs/courses-page.jpg)
 
