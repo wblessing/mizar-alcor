@@ -1,9 +1,9 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import * as courseActions from '../../redux/actions/courseActions';
 import * as authorActions from '../../redux/actions/authorActions';
-import { bindActionCreators } from 'redux';
 import CourseList from './CourseList';
 import Spinner from '../../components/common/Spinner';
 import PageTitle from '../../components/common/PageTitle';
