@@ -1,261 +1,265 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`sets submit button label 'Save' when saving is false 1`] = `
-<section
-  className="bg-white p-4 shadow-md rounded-md"
->
-  <form
-    onSubmit={[MockFunction]}
+Array [
+  <div
+    className="my-1 sm:my-4"
   >
-    <div
-      className="my-1 sm:my-4"
+    <h2
+      className="text-gray-800 font-bold text-2xl"
     >
-      <h2
-        className="text-gray-800 font-bold text-2xl"
-      >
-        Add Course
-      </h2>
-    </div>
-    <div
-      className="form-group"
+      Add Course
+    </h2>
+  </div>,
+  <div
+    className="bg-white p-4 shadow-md rounded-md"
+  >
+    <form
+      onSubmit={[MockFunction]}
     >
-      <label
-        htmlFor="title"
+      <div
+        className="form-group"
       >
-        Title
-      </label>
-      <div>
-        <input
-          className="appearance-none rounded-none relative block w-full px-3
+        <label
+          htmlFor="title"
+        >
+          Title
+        </label>
+        <div>
+          <input
+            className="appearance-none rounded-none relative block w-full px-3
             py-2 border border-gray-300 placeholder-gray-500 text-gray-900
             rounded-md focus:outline-n=i9u[-;'e focus:shadow-outline-blue
             focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5"
-          name="title"
-          onChange={[MockFunction]}
-          type="text"
-          value="Securing React Apps with Auth0"
-        />
+            name="title"
+            onChange={[MockFunction]}
+            type="text"
+            value="Securing React Apps with Auth0"
+          />
+        </div>
       </div>
-    </div>
-    <div>
-      <label
-        htmlFor="authorId"
-      >
-        Author
-      </label>
       <div>
-        <select
-          name="authorId"
-          onChange={[MockFunction]}
-          value={1}
+        <label
+          htmlFor="authorId"
         >
-          <option
-            value=""
-          >
-            Select Author
-          </option>
-          <option
+          Author
+        </label>
+        <div>
+          <select
+            name="authorId"
+            onChange={[MockFunction]}
             value={1}
           >
-            Cory House
-          </option>
-          <option
-            value={2}
-          >
-            Scott Allen
-          </option>
-          <option
-            value={3}
-          >
-            Dan Wahlin
-          </option>
-        </select>
+            <option
+              value=""
+            >
+              Select Author
+            </option>
+            <option
+              value={1}
+            >
+              Cory House
+            </option>
+            <option
+              value={2}
+            >
+              Scott Allen
+            </option>
+            <option
+              value={3}
+            >
+              Dan Wahlin
+            </option>
+          </select>
+        </div>
       </div>
-    </div>
-    <div
-      className="form-group"
-    >
-      <label
-        htmlFor="url"
+      <div
+        className="form-group"
       >
-        Url
-      </label>
-      <div>
-        <input
-          className="appearance-none rounded-none relative block w-full px-3
+        <label
+          htmlFor="url"
+        >
+          Url
+        </label>
+        <div>
+          <input
+            className="appearance-none rounded-none relative block w-full px-3
             py-2 border border-gray-300 placeholder-gray-500 text-gray-900
             rounded-md focus:outline-n=i9u[-;'e focus:shadow-outline-blue
             focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5"
-          name="url"
-          onChange={[MockFunction]}
-          type="text"
-          value="http://pluralsight.com/course/react-auth0-authentication-security"
-        />
+            name="url"
+            onChange={[MockFunction]}
+            type="text"
+            value="http://pluralsight.com/course/react-auth0-authentication-security"
+          />
+        </div>
       </div>
-    </div>
-    <div
-      className="form-group"
-    >
-      <label
-        htmlFor="category"
+      <div
+        className="form-group"
       >
-        Category
-      </label>
-      <div>
-        <input
-          className="appearance-none rounded-none relative block w-full px-3
+        <label
+          htmlFor="category"
+        >
+          Category
+        </label>
+        <div>
+          <input
+            className="appearance-none rounded-none relative block w-full px-3
             py-2 border border-gray-300 placeholder-gray-500 text-gray-900
             rounded-md focus:outline-n=i9u[-;'e focus:shadow-outline-blue
             focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5"
-          name="category"
-          onChange={[MockFunction]}
-          type="text"
-          value="JavaScript"
-        />
+            name="category"
+            onChange={[MockFunction]}
+            type="text"
+            value="JavaScript"
+          />
+        </div>
       </div>
-    </div>
-    <div
-      className="w-full sm:w-1/4 mt-4"
-    >
-      <button
-        className="flex rounded-full items-center py-2 px-6 bg-gradient focus:outline-none shadow-lg text-white"
-        type="submit"
+      <div
+        className="w-full sm:w-1/4 mt-4"
       >
-        <span>
-          Save
-        </span>
-      </button>
-    </div>
-  </form>
-</section>
+        <button
+          className="flex rounded-full items-center py-2 px-6 bg-gradient focus:outline-none shadow-lg text-white"
+          type="submit"
+        >
+          <span>
+            Save
+          </span>
+        </button>
+      </div>
+    </form>
+  </div>,
+]
 `;
 
 exports[`sets submit button label 'Saving...' when saving is true 1`] = `
-<section
-  className="bg-white p-4 shadow-md rounded-md"
->
-  <form
-    onSubmit={[MockFunction]}
+Array [
+  <div
+    className="my-1 sm:my-4"
   >
-    <div
-      className="my-1 sm:my-4"
+    <h2
+      className="text-gray-800 font-bold text-2xl"
     >
-      <h2
-        className="text-gray-800 font-bold text-2xl"
-      >
-        Add Course
-      </h2>
-    </div>
-    <div
-      className="form-group"
+      Add Course
+    </h2>
+  </div>,
+  <div
+    className="bg-white p-4 shadow-md rounded-md"
+  >
+    <form
+      onSubmit={[MockFunction]}
     >
-      <label
-        htmlFor="title"
+      <div
+        className="form-group"
       >
-        Title
-      </label>
-      <div>
-        <input
-          className="appearance-none rounded-none relative block w-full px-3
+        <label
+          htmlFor="title"
+        >
+          Title
+        </label>
+        <div>
+          <input
+            className="appearance-none rounded-none relative block w-full px-3
             py-2 border border-gray-300 placeholder-gray-500 text-gray-900
             rounded-md focus:outline-n=i9u[-;'e focus:shadow-outline-blue
             focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5"
-          name="title"
-          onChange={[MockFunction]}
-          type="text"
-          value="Securing React Apps with Auth0"
-        />
+            name="title"
+            onChange={[MockFunction]}
+            type="text"
+            value="Securing React Apps with Auth0"
+          />
+        </div>
       </div>
-    </div>
-    <div>
-      <label
-        htmlFor="authorId"
-      >
-        Author
-      </label>
       <div>
-        <select
-          name="authorId"
-          onChange={[MockFunction]}
-          value={1}
+        <label
+          htmlFor="authorId"
         >
-          <option
-            value=""
-          >
-            Select Author
-          </option>
-          <option
+          Author
+        </label>
+        <div>
+          <select
+            name="authorId"
+            onChange={[MockFunction]}
             value={1}
           >
-            Cory House
-          </option>
-          <option
-            value={2}
-          >
-            Scott Allen
-          </option>
-          <option
-            value={3}
-          >
-            Dan Wahlin
-          </option>
-        </select>
+            <option
+              value=""
+            >
+              Select Author
+            </option>
+            <option
+              value={1}
+            >
+              Cory House
+            </option>
+            <option
+              value={2}
+            >
+              Scott Allen
+            </option>
+            <option
+              value={3}
+            >
+              Dan Wahlin
+            </option>
+          </select>
+        </div>
       </div>
-    </div>
-    <div
-      className="form-group"
-    >
-      <label
-        htmlFor="url"
+      <div
+        className="form-group"
       >
-        Url
-      </label>
-      <div>
-        <input
-          className="appearance-none rounded-none relative block w-full px-3
+        <label
+          htmlFor="url"
+        >
+          Url
+        </label>
+        <div>
+          <input
+            className="appearance-none rounded-none relative block w-full px-3
             py-2 border border-gray-300 placeholder-gray-500 text-gray-900
             rounded-md focus:outline-n=i9u[-;'e focus:shadow-outline-blue
             focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5"
-          name="url"
-          onChange={[MockFunction]}
-          type="text"
-          value="http://pluralsight.com/course/react-auth0-authentication-security"
-        />
+            name="url"
+            onChange={[MockFunction]}
+            type="text"
+            value="http://pluralsight.com/course/react-auth0-authentication-security"
+          />
+        </div>
       </div>
-    </div>
-    <div
-      className="form-group"
-    >
-      <label
-        htmlFor="category"
+      <div
+        className="form-group"
       >
-        Category
-      </label>
-      <div>
-        <input
-          className="appearance-none rounded-none relative block w-full px-3
+        <label
+          htmlFor="category"
+        >
+          Category
+        </label>
+        <div>
+          <input
+            className="appearance-none rounded-none relative block w-full px-3
             py-2 border border-gray-300 placeholder-gray-500 text-gray-900
             rounded-md focus:outline-n=i9u[-;'e focus:shadow-outline-blue
             focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5"
-          name="category"
-          onChange={[MockFunction]}
-          type="text"
-          value="JavaScript"
-        />
+            name="category"
+            onChange={[MockFunction]}
+            type="text"
+            value="JavaScript"
+          />
+        </div>
       </div>
-    </div>
-    <div
-      className="w-full sm:w-1/4 mt-4"
-    >
-      <button
-        className="flex rounded-full items-center py-2 px-6 bg-gradient focus:outline-none shadow-lg text-white"
-        type="submit"
+      <div
+        className="w-full sm:w-1/4 mt-4"
       >
-        <span>
-          Saving...
-        </span>
-      </button>
-    </div>
-  </form>
-</section>
+        <button
+          className="flex rounded-full items-center py-2 px-6 bg-gradient focus:outline-none shadow-lg text-white"
+          type="submit"
+        >
+          <span>
+            Saving...
+          </span>
+        </button>
+      </div>
+    </form>
+  </div>,
+]
 `;
