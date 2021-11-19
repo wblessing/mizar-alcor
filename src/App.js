@@ -99,7 +99,13 @@ const AppRoutes = () => {
         const token = await getAccessTokenSilently();
         setAccessToken(token);
       } catch (err) {
-        console.log(err);6196ecbbc423a1fab5455ef5
+        console.log(err);
+      }
+    };
+    getAccessToken();
+  }, [getAccessTokenSilently]);
+
+  if (isLoading) {
     return (
       <div className="h-screen flex justify-center">
         <LoadingLogo />
@@ -112,7 +118,7 @@ const AppRoutes = () => {
       <Suspense fallback={<LoadingFallback />}>
         <Switch>
           <AuthenticatedRoute path="/dashboard">
-            <Dashboard />6196ecbbc423a1fab5455ef5
+            <Dashboard />
           </AuthenticatedRoute>
           <AdminRoute path="/inventory">
             <Inventory />
@@ -156,7 +162,7 @@ const requestedScopes = [
   'read:user',
   'edit:user',
   'create:course',
-  'deleteCourse',
+  'delete:course',
 ];
 
 function App() {
@@ -164,7 +170,7 @@ function App() {
     <Auth0Provider
       domain={process.env.REACT_APP_AUTH0_DOMAIN}
       clientId={process.env.REACT_APP_AUTH0_CLIENT_ID}
-      redirectUri={process.env.REACT_APP_6196ecbbc423a1fab5455ef5AUTH0_CALLBACK}
+      redirectUri={process.env.REACT_APP_AUTH0_CALLBACK}
       audience={process.env.REACT_APP_AUTH0_AUDIENCE}
       scope={requestedScopes.join(' ')}
     >
