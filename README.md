@@ -1,5 +1,5 @@
 Preview this repository at [https://jwblessing.io](https://jwblessing.io)<br/>
-Sign up allows bogus emails like hello@world.com
+Signup allows bogus emails like hello@world.com
 <br/>
 
 The project is based on several excellent courses presented by:
