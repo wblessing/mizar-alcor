@@ -11,7 +11,5 @@ Thanks!
 <br />
 Bill
 <br />
-<br />
 
 ![Alt text](docs/courses-page.jpg)
-
