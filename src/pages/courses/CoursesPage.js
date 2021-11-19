@@ -1,16 +1,15 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as courseActions from '../../redux/actions/courseActions';
 import * as authorActions from '../../redux/actions/authorActions';
-import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import CourseList from './CourseList';
-import { Redirect } from 'react-router-dom';
 import Spinner from '../../components/common/Spinner';
-import { toast } from 'react-toastify';
-//import 'bootstrap/dist/css/bootstrap.min.css';
 import PageTitle from '../../components/common/PageTitle';
 import GradientButton from '../../components/common/buttons/GradientButton';
+import PropTypes from 'prop-types';
+import { toast } from 'react-toastify';
 
 class CoursesPage extends React.Component {
   state = {

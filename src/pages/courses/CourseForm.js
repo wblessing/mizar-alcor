@@ -4,6 +4,7 @@ import TextInput from '../../components/common/TextInput';
 import SelectInput from '../../components/common/SelectInput';
 import PageTitle from '../../components/common/PageTitle';
 import GradientButton from '../../components/common/buttons/GradientButton';
+import * as classnames from '../../components/common/classnames';
 
 const CourseForm = ({
   course,
@@ -14,7 +15,7 @@ const CourseForm = ({
   errors = {},
 }) => {
   return (
-    <section className="bg-white p-4 shadow-md rounded-md">
+    <section className={classnames.FORM_BORDER}>
       <form onSubmit={onSave}>
         <PageTitle title={course.id ? 'Edit Course' : 'Add Course'} />
         {errors.onSave && (
