@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import * as classnames from '../../components/common/classnames';
 
 const SelectInputBoot = ({
   name,
@@ -10,6 +11,8 @@ const SelectInputBoot = ({
   error,
   options,
 }) => {
+  console.log(classnames.SELECT_INPUT);
+  debugger;
   return (
     <div className="form-group">
       <label htmlFor={name}>{label}</label>
@@ -19,10 +22,7 @@ const SelectInputBoot = ({
           name={name}
           value={value}
           onChange={onChange}
-          className="appearance-none rounded-none relative block w-full px-3
-            py-2 border border-gray-300 placeholder-gray-500 text-gray-900
-            rounded-md focus:outline-none focus:shadow-outline-blue
-            focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5"
+          className={classnames.SELECT_INPUT}
         >
           <option value="">{defaultOption}</option>
           {options.map((option) => {
