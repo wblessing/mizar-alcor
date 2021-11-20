@@ -25,31 +25,31 @@ const navItems = [
     allowedRoles: ['user', 'admin'],
   },
   {
-    label: 'Inventory' + paren1,
+    label: 'Inventory ' + paren1,
     path: '/inventory',
     icon: faChartPie,
     allowedRoles: ['admin'],
   },
   {
-    label: 'Courses' + paren2,
+    label: 'Courses ' + paren2,
     path: '/courses',
     icon: faAward,
     allowedRoles: ['user', 'admin'],
   },
   {
-    label: 'Account' + paren1,
+    label: 'Account ' + paren1,
     path: '/account',
     icon: faAddressCard,
     allowedRoles: ['user', 'admin'],
   },
   {
-    label: 'Settings' + paren1,
+    label: 'Settings ' + paren1,
     path: '/settings',
     icon: faCogs,
     allowedRoles: ['admin'],
   },
   {
-    label: 'Users' + paren1,
+    label: 'Users ' + paren1,
     path: '/users',
     icon: faDoorOpen,
     allowedRoles: ['admin'],
@@ -71,7 +71,9 @@ const NavItem = ({ navItem }) => {
         <div className="mr-0 sm:mr-4">
           <FontAwesomeIcon icon={navItem.icon} />
         </div>
-        <span className="hidden sm:block">{navItem.label}</span>
+        <span className="hidden sm:block" style={{ whiteSpace: 'nowrap' }}>
+          {navItem.label}
+        </span>
       </div>
     </Link>
   );
