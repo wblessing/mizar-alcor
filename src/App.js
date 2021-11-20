@@ -162,6 +162,7 @@ const requestedScopes = [
   'read:user',
   'edit:user',
   'create:course',
+  'update:course',
   'delete:course',
 ];
 

@@ -1,20 +1,24 @@
 const { coursesTable } = require('./helpers/airtable');
 const formattedReturn = require('./helpers/formattedReturn');
+const { requireScope } = require('../lib/auth');
 
-exports.handler = async (event, context, callback) => {
-  context.callbackWaitsForEmptyEventLoop = false;
-  const { id, ...fields } = JSON.parse(event.body);
-  try {
-    const updatedCourse = await coursesTable.update([{ id, fields }]);
+exports.handler = requireScope(
+  'update:course',
+  async (event, context, callback) => {
+    context.callbackWaitsForEmptyEventLoop = false;
+    const { id, ...fields } = JSON.parse(event.body);
+    try {
+      const updatedCourse = await coursesTable.update([{ id, fields }]);
 
-    const formattedCourse = {
-      id: updatedCourse[0].id,
-      ...fields,
-    };
+      const formattedCourse = {
+        id: updatedCourse[0].id,
+        ...fields,
+      };
 
-    return formattedReturn(200, formattedCourse);
-  } catch (err) {
-    console.error(err);
-    return formattedReturn(500, {});
+      return formattedReturn(200, formattedCourse);
+    } catch (err) {
+      console.error(err);
+      return formattedReturn(500, {});
+    }
   }
-};
+);
