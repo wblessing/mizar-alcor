@@ -16,10 +16,7 @@ exports.handler = requireScope(
 
       return callback(null, {
         statusCode: 200,
-        body: JSON.stringify({
-          createdCourse: formattedCourse,
-          message: 'Course created!',
-        }),
+        body: JSON.stringify(formattedCourse),
       });
     } catch (err) {
       console.log('the err', err);
