@@ -9,7 +9,7 @@ const Footer = () => {
   return (
     <footer className="p-6">
       <p style={{ color: '#6792A0' }}>
-        {paren1 + ' Serverless, token validation, and Mongo.'}
+        {paren1 + ' Serverless, token validation, and Mongo'}
       </p>
       <p style={{ color: '#6792A0' }}>
         {paren2 + ' Serverless, token validation, Redux, and Airtable'}

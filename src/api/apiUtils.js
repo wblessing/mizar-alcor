@@ -7,7 +7,7 @@ export async function handleResponse(response) {
     throw new Error(error);
   }
   throw new Error(
-    'Contact admin@jwblessing.io for additional Auth0 API permissions.'
+    'Contact admin@jwblessing.io for additional API permissions.'
   );
 }
 
