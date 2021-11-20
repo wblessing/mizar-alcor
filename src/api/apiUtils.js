@@ -6,12 +6,12 @@ export async function handleResponse(response) {
     const error = await response.text();
     throw new Error(error);
   }
-  throw new Error("Network response was not ok.");
+  throw new Error('May need to request additional API permissions.');
 }
 
 // In a real app, would likely call an error logging service.
 export function handleError(error) {
   // eslint-disable-next-line no-console
-  console.error("API call failed. " + error);
+  console.error('API call failed. ' + error);
   throw error;
 }

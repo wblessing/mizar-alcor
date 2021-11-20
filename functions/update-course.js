@@ -1,5 +1,4 @@
 const { coursesTable } = require('./helpers/airtable');
-const formattedReturn = require('./helpers/formattedReturn');
 const { requireScope } = require('../lib/auth');
 
 exports.handler = requireScope(
@@ -7,18 +6,29 @@ exports.handler = requireScope(
   async (event, context, callback) => {
     context.callbackWaitsForEmptyEventLoop = false;
     const { id, ...fields } = JSON.parse(event.body);
+
     try {
       const updatedCourse = await coursesTable.update([{ id, fields }]);
-
       const formattedCourse = {
         id: updatedCourse[0].id,
         ...fields,
       };
 
-      return formattedReturn(200, formattedCourse);
+      return callback(null, {
+        statusCode: 200,
+        body: JSON.stringify({
+          updatedCourse: formattedCourse,
+          message: 'Course updated!',
+        }),
+      });
     } catch (err) {
-      console.error(err);
-      return formattedReturn(500, {});
+      console.log('the err', err);
+      return callback(null, {
+        statusCode: 400,
+        body: JSON.stringify({
+          error: err,
+        }),
+      });
     }
   }
 );

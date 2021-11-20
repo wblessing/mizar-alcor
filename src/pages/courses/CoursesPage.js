@@ -32,7 +32,7 @@ class CoursesPage extends React.Component {
   }
 
   handleWatchCourse = async (course) => {
-    window.open(course.url, '_blank');
+    window.open(course.url, 'course');
   };
 
   handleDeleteCourse = async (course) => {

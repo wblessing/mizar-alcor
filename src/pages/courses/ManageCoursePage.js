@@ -53,7 +53,7 @@ export function ManageCoursePage({
       })
       .catch((error) => {
         setSaving(false);
-        setErrors({ onSave: error.message });
+        toast.error('Delete failed. ' + error.message, { autoClose: false });
       });
   }
 
