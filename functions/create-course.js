@@ -9,7 +9,6 @@ exports.handler = requireScope(
 
     try {
       const createdCourse = await coursesTable.create([{ fields }]);
-
       const formattedCourse = {
         id: createdCourse[0].id,
         ...fields,
@@ -17,7 +16,10 @@ exports.handler = requireScope(
 
       return callback(null, {
         statusCode: 200,
-        body: JSON.stringify(formattedCourse),
+        body: JSON.stringify({
+          createdCourse: formattedCourse,
+          message: 'Course created!',
+        }),
       });
     } catch (err) {
       console.log('the err', err);
