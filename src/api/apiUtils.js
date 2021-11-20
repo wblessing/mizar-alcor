@@ -6,7 +6,9 @@ export async function handleResponse(response) {
     const error = await response.text();
     throw new Error(error);
   }
-  throw new Error('May need to request additional API permissions.');
+  throw new Error(
+    'Contact admin@jwblessing.io for additional Auth0 API permissions.'
+  );
 }
 
 // In a real app, would likely call an error logging service.
