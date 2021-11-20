@@ -8,7 +8,8 @@
     "test:ci": "jest",
     "clean:build": "rimraf ./build && mkdir build",
     "prebuild": "run-p clean:build test:ci",
-    "build": "webpack --config webpack.config.prod.js"
+    "build": "webpack --config webpack.config.prod.js",
+    "postbuild": "echo '/* /index.html 200' | cat >build/_redirects "
   },
   "jest": {
     "setupFiles": [
