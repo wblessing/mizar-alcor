@@ -29,7 +29,7 @@ const HomeView = () => {
         </div>
       </div>
       <div className="h-full bg-blue-900">
-        <div>
+        <div className="opacity-10">
           <img src={skyImage} alt="Home" />
         </div>
         <div className="absolute left-0 top-0 mt-32 lg:mt-48 px-12 nato-sans">
