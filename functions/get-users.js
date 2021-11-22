@@ -1,8 +1,8 @@
 const UserConnection = require('../data/UserConnection');
-const { requireScope } = require('../lib/auth');
+const { requireAuth } = require('../lib/auth');
 
-exports.handler = requireScope(
-  'read:users',
+exports.handler = requireAuth(
+  // 'read:users',
   async (event, context, callback) => {
     context.callbackWaitsForEmptyEventLoop = false;
     try {

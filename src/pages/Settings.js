@@ -6,6 +6,7 @@ import Card from './../components/common/Card';
 import FormError from './../components/FormError';
 import FormSuccess from './../components/FormSuccess';
 import { FetchContext } from './../context/FetchContext';
+import { toast } from 'react-toastify';
 
 const Settings = () => {
   const fetchContext = useContext(FetchContext);
@@ -27,16 +28,13 @@ const Settings = () => {
 
   const saveBio = async (bio) => {
     try {
-      const { data } = await fetchContext.authAxios.patch(
-        'api/update-user-bio',
-        bio
-      );
-      setErrorMessage(null);
-      setSuccessMessage(data.message);
+      await fetchContext.authAxios.patch('api/update-user-bio', bio);
+      toast.successs('User Bio updated!');
     } catch (err) {
-      const { data } = err.response;
-      setSuccessMessage(null);
-      setErrorMessage(data.message);
+      toast.error(
+        'Save failed, contact admin@jwblessing.io for additional permissions.',
+        { autoClose: false }
+      );
     }
   };
   return (
