@@ -3,16 +3,12 @@ import { Field, Form, Formik } from 'formik';
 import GradientButton from '../components/common/buttons/GradientButton';
 import PageTitle from '../components/common/PageTitle';
 import Card from './../components/common/Card';
-import FormError from './../components/FormError';
-import FormSuccess from './../components/FormSuccess';
 import { FetchContext } from './../context/FetchContext';
 import { toast } from 'react-toastify';
 
 const Settings = () => {
   const fetchContext = useContext(FetchContext);
   const [bio, setBio] = useState();
-  const [successMessage, setSuccessMessage] = useState();
-  const [errorMessage, setErrorMessage] = useState();
 
   useEffect(() => {
     const getBio = async () => {
@@ -42,8 +38,6 @@ const Settings = () => {
       <PageTitle title="Settings" />
       <Card>
         <h2 className="font-bold mb-2">Fill Out Your Bio</h2>
-        {successMessage && <FormSuccess text={successMessage} />}
-        {errorMessage && <FormError text={errorMessage} />}
         <Formik
           initialValues={{
             bio,

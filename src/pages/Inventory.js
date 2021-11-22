@@ -7,6 +7,7 @@ import FormSuccess from './../components/FormSuccess';
 import InventoryItemForm from './../components/InventoryItemForm';
 import { formatCurrency } from './../util';
 import PropTypes from 'prop-types';
+import { toast } from 'react-toastify';
 
 const InventoryItemContainer = ({ children }) => (
   <div className="bg-white rounded shadow-md mb-4 p-4">{children}</div>
@@ -59,7 +60,10 @@ const Inventory = () => {
         );
         setInventory(data);
       } catch (err) {
-        console.log('the err', err);
+        toast.error(
+          'Get Inventory failed, contact admin@jwblessing.io for additional permissions.',
+          { autoClose: false }
+        );
       }
     };
 
@@ -77,9 +81,10 @@ const Inventory = () => {
       setSuccessMessage(data.message);
       setErrorMessage(null);
     } catch (err) {
-      const { data } = err.response;
-      setSuccessMessage(null);
-      setErrorMessage(data.message);
+      toast.error(
+        'Create Inventory failed, contact admin@jwblessing.io for additional permissions.',
+        { autoClose: false }
+      );
     }
   };
 
