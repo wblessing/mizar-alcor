@@ -9,6 +9,7 @@ export async function handleResponse(response) {
   throw new Error(
     'Contact admin@jwblessing.io for additional API permissions.'
   );
+  // throw new Error('Network response was not ok.');
 }
 
 // In a real app, would likely call an error logging service.

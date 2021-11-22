@@ -37,7 +37,7 @@ const navItems = [
     allowedRoles: ['user', 'admin'],
   },
   {
-    label: 'Account ' + paren1,
+    label: 'Account ',
     path: '/account',
     icon: faAddressCard,
     allowedRoles: ['user', 'admin'],

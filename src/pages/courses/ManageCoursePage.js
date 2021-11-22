@@ -53,7 +53,9 @@ export function ManageCoursePage({
       })
       .catch((error) => {
         setSaving(false);
-        toast.error('Save failed. ' + error.message, { autoClose: false });
+        toast.error('Save Course failed, ' + error.message, {
+          autoClose: false,
+        });
       });
   }
 

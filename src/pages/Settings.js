@@ -4,6 +4,7 @@ import GradientButton from '../components/common/buttons/GradientButton';
 import PageTitle from '../components/common/PageTitle';
 import Card from './../components/common/Card';
 import { FetchContext } from './../context/FetchContext';
+import * as constants from '../components/common/constants';
 import { toast } from 'react-toastify';
 
 const Settings = () => {
@@ -27,10 +28,9 @@ const Settings = () => {
       await fetchContext.authAxios.patch('api/update-user-bio', bio);
       toast.success('User Bio updated!');
     } catch (err) {
-      toast.error(
-        'Save Bio failed, contact admin@jwblessing.io for additional permissions.',
-        { autoClose: false }
-      );
+      toast.error('Save Bio failed, ' + constants.PERMISSIONS_MESSAGE, {
+        autoClose: false,
+      });
     }
   };
   return (

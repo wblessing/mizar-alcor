@@ -8,6 +8,7 @@ import CourseList from './CourseList';
 import Spinner from '../../components/common/Spinner';
 import PageTitle from '../../components/common/PageTitle';
 import GradientButton from '../../components/common/buttons/GradientButton';
+import * as constants from '../../components/common/constants';
 import PropTypes from 'prop-types';
 import { toast } from 'react-toastify';
 
@@ -37,11 +38,16 @@ class CoursesPage extends React.Component {
 
   handleDeleteCourse = async (course) => {
     if (window.confirm('Are you sure you want to delete this course?')) {
-      toast.success('Course optimistic delete');
+      toast.success('Course optimistic delete success!');
       try {
         await this.props.actions.deleteCourse(course, this.props.accessToken);
       } catch (error) {
-        toast.error('Delete failed. ' + error.message, { autoClose: false });
+        toast.error(
+          'Optimistic Delete Course failed, ' + constants.PERMISSIONS_MESSAGE,
+          {
+            autoClose: false,
+          }
+        );
       }
     }
   };

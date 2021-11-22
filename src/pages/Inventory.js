@@ -2,12 +2,11 @@ import React, { useContext, useEffect, useState } from 'react';
 import PageTitle from '../components/common/PageTitle';
 import { FetchContext } from '../context/FetchContext';
 import DangerButton from './../components/common/buttons/DangerButton';
-import FormError from './../components/FormError';
-import FormSuccess from './../components/FormSuccess';
 import InventoryItemForm from './../components/InventoryItemForm';
 import { formatCurrency } from './../util';
-import PropTypes from 'prop-types';
+import * as constants from '../components/common/constants';
 import { toast } from 'react-toastify';
+import PropTypes from 'prop-types';
 
 const InventoryItemContainer = ({ children }) => (
   <div className="bg-white rounded shadow-md mb-4 p-4">{children}</div>
@@ -49,8 +48,6 @@ const NewInventoryItem = ({ onSubmit }) => {
 const Inventory = () => {
   const fetchContext = useContext(FetchContext);
   const [inventory, setInventory] = useState([]);
-  const [successMessage, setSuccessMessage] = useState();
-  const [errorMessage, setErrorMessage] = useState();
 
   useEffect(() => {
     const getInventory = async () => {
@@ -60,10 +57,10 @@ const Inventory = () => {
         );
         setInventory(data);
       } catch (err) {
-        toast.error(
-          'Get Inventory failed, contact admin@jwblessing.io for additional permissions.',
-          { autoClose: false }
-        );
+        console.log(err);
+        //toast.error('Get Inventory failed, ' + constants.PERMISSIONS_MESSAGE, {
+        //  autoClose: false,
+        //});
       }
     };
 
@@ -78,13 +75,11 @@ const Inventory = () => {
       );
       setInventory([...inventory, data.inventoryItem]);
       resetForm();
-      setSuccessMessage(data.message);
-      setErrorMessage(null);
+      toast.success('Create Inventory success!');
     } catch (err) {
-      toast.error(
-        'Create Inventory failed, contact admin@jwblessing.io for additional permissions.',
-        { autoClose: false }
-      );
+      toast.error('Create Inventory failed, ' + constants.PERMISSIONS_MESSAGE, {
+        autoClose: false,
+      });
     }
   };
 
@@ -97,21 +92,18 @@ const Inventory = () => {
         setInventory(
           inventory.filter((item) => item._id !== data.deletedItem._id)
         );
-        setSuccessMessage(data.message);
-        setErrorMessage(null);
+        toast.success('Delete Inventory success!');
       }
     } catch (err) {
-      const { data } = err.response;
-      setSuccessMessage(null);
-      setErrorMessage(data.message);
+      toast.error('Delete Inventory failed, ' + constants.PERMISSIONS_MESSAGE, {
+        autoClose: false,
+      });
     }
   };
 
   return (
     <>
       <PageTitle title="Inventory" />
-      {successMessage && <FormSuccess text={successMessage} />}
-      {errorMessage && <FormError text={errorMessage} />}
       <div className="mb-4">
         <NewInventoryItem onSubmit={onSubmit} />
       </div>
