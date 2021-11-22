@@ -25,10 +25,10 @@ const Settings = () => {
   const saveBio = async (bio) => {
     try {
       await fetchContext.authAxios.patch('api/update-user-bio', bio);
-      toast.successs('User Bio updated!');
+      toast.success('User Bio updated!');
     } catch (err) {
       toast.error(
-        'Save failed, contact admin@jwblessing.io for additional permissions.',
+        'Save Bio failed, contact admin@jwblessing.io for additional permissions.',
         { autoClose: false }
       );
     }
