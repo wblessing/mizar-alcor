@@ -13,3 +13,10 @@ Bill
 <br />
 
 ![Alt text](docs/courses-page.jpg)
+<br />
+<br />
+[Mizar Alcor Discoverer](https://en.wikipedia.org/wiki/Benedetto_Castelli)
+
+
+
+
