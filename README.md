@@ -15,7 +15,7 @@ Bill
 ![Alt text](docs/courses-page.jpg)
 <br />
 <br />
-[Benedetto Castelli - Mizar Alcor Discoverer](https://en.wikipedia.org/wiki/Benedetto_Castelli)
+[Mizar Alcor - Benedetto Castelli](https://en.wikipedia.org/wiki/Benedetto_Castelli)
 
 
 
