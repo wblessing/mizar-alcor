@@ -13,10 +13,3 @@ Bill
 <br />
 
 ![Alt text](docs/courses-page.jpg)
-<br />
-<br />
-[Mizar Alcor Observer - Benedetto Castelli](https://en.wikipedia.org/wiki/Benedetto_Castelli)
-
-
-
-
