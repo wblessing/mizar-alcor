@@ -4,8 +4,8 @@ Signup allows fake emails like ping@pong.com
 
 The project is based on several excellent courses presented by:
 
-- [Ryan Chenkie](https://github.com/chenkie)
 - [Cory House](https://github.com/coryhouse)
+- [Ryan Chenkie](https://github.com/chenkie)
 
 Thanks!
 <br />
