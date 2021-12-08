@@ -5,7 +5,7 @@ The project demonstrates Auth0 security with
 - roles 
 - grant access
  
-Preview at [https://jwblessing.io](https://jwblessing.io) and allows signup emails like ping@pong.com
+Preview application at [https://jwblessing.io](https://jwblessing.io) which allows signup emails like ping@pong.com
 <br/>
 The project is based on several excellent courses presented by:
 
