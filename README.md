@@ -13,9 +13,12 @@ The project is based on several excellent courses presented by:
 - [Cory House](https://github.com/coryhouse)
 - [Ryan Chenkie](https://github.com/chenkie)
 
-Thanks!
-<br />
-Bill
-<br />
 
 ![Alt text](docs/courses-page.jpg)
+<br />
+<br />
+Sam is my assistant and does great work!
+<br />
+![Alt text](docs/sam.jpg)
+
+
