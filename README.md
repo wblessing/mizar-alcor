@@ -1,7 +1,11 @@
-Preview this repository at [https://jwblessing.io](https://jwblessing.io)
-<br/>
-<br/>
-Signup allows fake emails like ping@pong.com
+Demonstrates Auth0 security 
+- openid
+- profile
+- oauth2
+- roles 
+- grant access
+ 
+Preview at [https://jwblessing.io](https://jwblessing.io) and allows signup emails like ping@pong.com
 <br/>
 <br/>
 The project is based on several excellent courses presented by:
