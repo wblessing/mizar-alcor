@@ -7,7 +7,6 @@ Demonstrates Auth0 security
  
 Preview at [https://jwblessing.io](https://jwblessing.io) and allows signup emails like ping@pong.com
 <br/>
-<br/>
 The project is based on several excellent courses presented by:
 
 - [Cory House](https://github.com/coryhouse)
