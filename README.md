@@ -1,6 +1,5 @@
 Preview this repository at [https://jwblessing.io](https://jwblessing.io)
 <br/>
-<br/>
 Signup allows fake emails like ping@pong.com
 <br/>
 The project is based on several excellent courses presented by:
