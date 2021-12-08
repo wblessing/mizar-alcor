@@ -20,5 +20,10 @@ The project is based on several excellent courses presented by:
 Sam is my assistant and does great work!
 <br />
 ![Alt text](docs/sam.jpg)
+<br />
+<br />
+Likes to eat and monitor the bird bath
+<br />
+![Alt text](docs/bird-bath.jpg)
 
 
