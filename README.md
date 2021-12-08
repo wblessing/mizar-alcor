@@ -1,4 +1,4 @@
-Demonstrates Auth0 security 
+The project demonstrates Auth0 security with 
 - openid
 - profile
 - oauth2
