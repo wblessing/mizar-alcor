@@ -1,6 +1,5 @@
 Redux project demonstrates Auth0 security with 
 - openid
-- profile
 - oauth2
 - roles 
 - grant access
