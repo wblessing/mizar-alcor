@@ -22,7 +22,7 @@ Does great work!
 <br />
 ![Alt text](docs/sam.jpg)
 <br />
-Likes to eat and monitor the bird bath ![Alt text](docs/bird.png)
+Love to eat and monitor the bird bath ![Alt text](docs/bird.png)
 <br />
 <br />
 ![Alt text](docs/bird-bath.jpg)
