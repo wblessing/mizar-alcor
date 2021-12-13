@@ -17,6 +17,7 @@ The project is based on several excellent courses presented by:
 ![Alt text](docs/courses-page.jpg)
 
 ## Contributor - sam@github.com
+Does great work!
 <br />
 <br />
 ![Alt text](docs/sam.jpg)
