@@ -5,7 +5,8 @@ React with Redux project demonstrates Auth0 security:
 - roles 
 - grant access
  
-Preview application at [https://jwblessing.io](https://jwblessing.io) which allows signup emails like ping@pong.com.
+Preview application at [https://jwblessing.io](https://jwblessing.io) which allows signup
+<br/>emails like ping@pong.com.
 <br/>
 <br/>
 The project is based on several excellent courses presented by:
