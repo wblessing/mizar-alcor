@@ -20,4 +20,4 @@ The project is based on several excellent courses presented by:
 ![Alt text](docs/bird-bath.jpg)
 <br />
 <br />
-🙂
+
