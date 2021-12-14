@@ -15,16 +15,8 @@ The project is based on several excellent courses presented by:
 
 
 ![Alt text](docs/courses-page.jpg)
-
-## Contributor - sam@github.com
-Does great work!
 <br />
-<br />
-![Alt text](docs/sam.jpg)
-<br />
-Loves to eat and monitor the bird bath ![Alt text](docs/bird.png)
-<br />
-<br />
+#### sam@github.com ![Alt text](docs/bird.png)
 ![Alt text](docs/bird-bath.jpg)
 <br />
 <br />
