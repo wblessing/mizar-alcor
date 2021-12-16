@@ -13,8 +13,8 @@ Preview application at [https://jwblessing.io](https://jwblessing.io) which allo
 <br/>
 The project is based on several excellent courses presented by:
 
-- [Cory House](https://github.com/coryhouse)
 - [Ryan Chenkie](https://github.com/chenkie)
+- [Cory House](https://github.com/coryhouse)
 
 ![Courses page](docs/courses-page.jpg)
 <br />
