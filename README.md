@@ -1,6 +1,6 @@
 ## Description
 
-React with Redux project demonstrates Auth0 security:
+React with Redux project demonstrates:
 
 - openid
 - oauth2
