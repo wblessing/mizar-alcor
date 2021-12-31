@@ -19,7 +19,7 @@ The project is based on several excellent courses presented by:
 ![Courses page](docs/courses-page.jpg)
 <br />
 
-## Lead Engineer
+## Technical Lead
 
 #### sam@github.com ![Bird](docs/bird.png) ![Bird](docs/bird-flip.png)
 
