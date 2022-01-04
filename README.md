@@ -22,7 +22,7 @@ The project is based on several excellent courses presented by:
 
 ### Technical Lead
 
-#### sam@github.com ![Bird](docs/bird.png)
+#### sam@github.com ![Bird](docs/bird-flip.png)
 
 ![Bird bath](docs/bird-bath.jpg)
 <br />
