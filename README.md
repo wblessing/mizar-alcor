@@ -17,12 +17,9 @@ The project is based on several excellent courses presented by:
 - [Cory House](https://github.com/coryhouse)
 
 ![Courses page](docs/courses-page.jpg)
-<br />
 
 ### Technical Lead
-
-#### sam@github.com ![Bird](docs/bird-flip.png)
-
+##### sam@github.com ![Bird](docs/bird-flip.png)
 ![Bird bath](docs/bird-bath.jpg)
 <br />
 <br />
