@@ -18,7 +18,6 @@ The project is based on several excellent courses presented by:
 
 ![Courses page](docs/courses-page.jpg)
 <br />
-<br />
 
 ### Technical Lead
 
