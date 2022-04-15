@@ -2,16 +2,17 @@
 
 React with Redux project demonstrates:
 
-- openid
-- oauth2
-- roles
-- grant access
+- Auth0
+- OpenID
+- Oauth2
+- Netlify
 
-Preview application at [https://jwblessing.io](https://jwblessing.io) which allows signup
-<br/>emails like ping@pong.com.
+Preview application at [https://jwblessing.io](https://jwblessing.io) The roadmap is to 
+<br/>incorporate other components of the Jamstack for continued learning. 
+<br/>Application has secure Signup grant access without email verification, 
+<br/>even though none of the content really needs to be protected.
 <br/>
-<br/>
-The project is based on several excellent courses presented by:
+<br/>Based on several excellent courses presented by:
 
 - [Ryan Chenkie](https://github.com/chenkie)
 - [Cory House](https://github.com/coryhouse)
