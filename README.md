@@ -1,6 +1,6 @@
 ## Description
 
-SPA using React with Redux.
+React Redux SPA.
 
 - Auth0
 - OpenID
