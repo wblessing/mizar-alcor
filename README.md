@@ -1,6 +1,6 @@
 ## Description
 
-React with Redux project demonstrates:
+Personal baseline SPA project using React with Redux.
 
 - Auth0
 - OpenID
