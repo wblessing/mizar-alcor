@@ -1,6 +1,6 @@
 ## Description
 
-React Redux SPA.
+React Redux SPA includes:
 
 - Auth0
 - OpenID
