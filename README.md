@@ -10,7 +10,7 @@ React Redux SPA includes:
 Application has secure Signup grant access without email verification, 
 <br/>even though none of the content really needs to be protected.
 <br/>
-<br/>Based on several excellent courses presented by:
+<br/>Based on excellent courses presented by:
 
 - [Ryan Chenkie](https://github.com/chenkie)
 - [Cory House](https://github.com/coryhouse)
